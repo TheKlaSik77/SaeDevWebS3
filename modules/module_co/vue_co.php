@@ -76,14 +76,6 @@ class VueCo extends VueGenerique
 
                     <!-- body -->
                     <div class="card-body px-5">
-                        <!-- Account section -->
-                        <!---
-                            <div class="row gx-xl-5">
-                            <div class="col-md-4">
-                                <h5>Compte</h5>
-                                <p class="text-muted">Créez vous un compte pour profiter plainement de l'expérience !</p>
-                            </div> -->
-
                         <div class="col-md-8">
                             <div class="mb-3">
                                 <label for="exampleInput1" class="form-label">Login</label>
@@ -98,15 +90,15 @@ class VueCo extends VueGenerique
                             </div>
                             <div class="mb-3">
                                 <label for="disabledSelect" class="form-label">Pays</label>
-                                <select id="disabledSelect" class="form-select">
-                                    <option>Selectionner Pays</option>
+                                <select id="disabledSelect" class="form-control">
+                                    <option>Selectionner pays</option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+                                    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled="">
                                     <label class="form-check-label" for="disabledFieldsetCheck">
-                                        Skip
+                                        Can't check this
                                     </label>
                                 </div>
                             </div>
@@ -117,8 +109,6 @@ class VueCo extends VueGenerique
                                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
                                 <small>Format attendu : example@example.com</small>
                             </div>
-                          
-
                         </div>
                     </div>
 
@@ -130,6 +120,7 @@ class VueCo extends VueGenerique
                             S'inscrire
                         </button>
                     </div>
+
                 </form>
             </div>
         </div>
