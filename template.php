@@ -59,18 +59,11 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
                     </svg>
                     </a>
                 </section>
-
-                <section class="mb-4">
-                    <p>
-                        Apres la pluie est un service permettant de commander des clips en ligne. Le but est de changer la façon dont les artistes
-                        trouves des clipers et aussi qu'ils puissent choisir exactement le materiel qui sera utilisé dans le clip.
-                    </p>
-                </section>
             </div>
             <div class="text-center p-3">
             Version 1.0 - 2022/12/01 -
             GNU GPL Copyleft 🄯 2022-2032 -
-            Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA
+            Initiated by Amelia & Yasmine BEN YOUSSEF | Kylian LASIK | Marielle VALLEE
             </div>
         </footer>
     </div>

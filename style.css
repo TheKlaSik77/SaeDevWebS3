@@ -1,12 +1,222 @@
 /* Version 1.0 - 2022/12/05 -
 GNU GPL Copyleft 🄯 2022-2032 -
 Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA */
+/* Version 1.0 - 2022/12/05 -
+GNU GPL Copyleft 🄯 2022-2032 -
+Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA */
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
 :root{
     --bleuFonce: rgba(5,28,36);
     --noir:rgb(0,0,0);
-    --bleuu: rgb(142, 148, 73);
+    --bleuu: rgb(138, 146, 69);
+    --entreDeux: rgb(133, 138, 74);
+}
+
+html{
+    min-height: 100%;
+}
+
+body{
+    font-family: 'Metal Mania', cursive;
+
+}
+
+main{
+    background: rgb(0,0,0);
+    min-height: 100vh;
+
+
+}
+
+
+/*CONNEXION*/
+
+h4{
+    text-align: center;
+    color: black;
+}
+
+button {
+    display: flex;
+}
+
+footer{
+    border-top: solid var(--bleuu) 2px;
+    background-color : black;
+    
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+.nav-brand{
+    text-decoration: none;
+}
+
+li{
+    margin: 0px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+a:hover{
+    transition: all 0.5s ease;
+    color: rgb(190, 190, 190);
+}
+
+#navPrincipale{
+    color: var(--bleuu);
+    background-color : var(--gris);
+    border-bottom: solid var(--bleuu) 2px;
+}
+
+.nav-item{
+    vertical-align: baseline;
+}
+
+#logo{
+    width: 4em;
+    margin-bottom: 6px;
+}
+
+#logo_perso{
+    width: 1em;
+}
+
+.navbar{
+    margin : 0px;
+    padding: 0px;
+}
+
+.nav-droite{
+    position: absolute;
+    right:0.5em;
+}
+
+
+
+
+
+#bouton-modif-mdp{
+    position: absolute;
+    right:1em;
+}
+
+#bouton-mes-reserv{
+    margin-top: 3em;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#fond_connexion{
+    background-image: url('../SaeDevWebS3/images/fond_connexion.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 100%; /* Assurez-vous que le container prend toute la largeur */
+    min-height: 100vh; /* Et toute la hauteur de la fenêtre */
+   
+}
+
+#fond_inscription{
+    background-image: url('../SaeDevWebS3/images/fond_connexion.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 100%; /* Assurez-vous que le container prend toute la largeur */
+    min-height: 100vh; /* Et toute la hauteur de la fenêtre */
+   
+}
+
+.card {
+    background: #cecdcd; /* Couleur de fond du formulaire */
+    color: #000; /* Couleur du texte */
+    border: none; /* Pas de bordure si vous ne la voulez pas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre portée pour le relief */
+    margin: auto; /* Centrer la carte dans le container */
+    padding: 2rem; /* Espacement à l'intérieur de la carte */
+    width: 50%; /* Largeur du formulaire, ajustez selon votre besoin */
+    max-width: 600px; /* Largeur maximale du formulaire */
+}
+
+.card-header,
+.card-footer {
+    background: #cecdcd; /* Fond noir */
+    border: none;
+}
+
+.login-card {
+    padding: 20px;
+    border: 1px solid #2c3e50; /* Bordure personnalisée */
+    background: rgba(0, 0, 0, 0.8); /* Fond noir semi-transparent */
+    backdrop-filter: blur(5px); /* Flou de l'arrière-plan pour un effet de verre */
+}
+
+.login-field {
+    margin-bottom: 10px;
+}
+
+.login-field label {
+    display: block;
+    color: #8c8c8c; /* Couleur de label */
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.login-field input {
+    background: #ffffff; /* Fond des champs de saisie */
+    border: 1px solid #333; /* Bordure des champs de saisie */
+    color: #fff; /* Texte des champs de saisie */
+    padding: 10px;
+    width: calc(100% - 22px); /* Ajustement de la largeur */
+}
+
+.btn-class{
+    display: flex;
+    justify-content: center; /* Centrer les éléments horizontalement dans le flex container */
+    padding: 1rem;
+}
+
+.btn-primary {
+    background: #959c54; /* Fond du bouton */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+}
+
+
+
+.btn-primary:hover {
+    background: #959c54; /* Changement de fond au survol */
+}
+
+.account-section h5, .account-section p {
+    text-align: center;
+}
+
+.card-header h4 {
+    text-align: center;
+}
+
+
+/*@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+:root{
+    --bleuFonce: rgba(5,28,36);
+    --noir:rgb(0,0,0);
+    --bleuu: rgb(0, 144, 240);
     --entreDeux: rgba(0, 103, 141);
 }
 
@@ -162,9 +372,6 @@ a:hover{
     text-align: center;
 }
 
-.card-footer button {
-    flex: 0.8; /* Ajoutez cette ligne pour que le bouton occupe tout l'espace disponible */
-}
 
 
 .bords{
@@ -199,6 +406,7 @@ a:hover{
 
 
 /* ACCUEIL */
+/*
 .acc{
     margin-left: auto;
     margin-right: auto;
@@ -213,7 +421,7 @@ a:hover{
     margin:auto;
     padding: 0.5em;
     border-radius: 2%;
-    /* filter: blur(1px); */
+    /* filter: blur(1px); 
 }
 
 #imgA2{
@@ -258,8 +466,7 @@ a:hover{
 .button-acc{
     box-shadow: 0px 0px 30px var(--bleuu);
 }
-
-/* INFO PERSO */
+/* INFO PERSO 
 #header-info-perso{
     display: inline-flex;
     width:100%;
@@ -277,3 +484,4 @@ a:hover{
 #bouton-mes-reserv{
     margin-top: 3em;
 }
+*/
