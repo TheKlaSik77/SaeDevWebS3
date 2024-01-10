@@ -139,6 +139,7 @@ a:hover{
    
 }
 
+
 .card {
     background: #cecdcd; /* Couleur de fond du formulaire */
     color: #000; /* Couleur du texte */
@@ -148,8 +149,19 @@ a:hover{
     padding: 2rem; /* Espacement à l'intérieur de la carte */
     width: 50%; /* Largeur du formulaire, ajustez selon votre besoin */
     max-width: 600px; /* Largeur maximale du formulaire */
+
 }
 
+.form-control, .form-select {
+    width: 92%; /* ou vous pouvez utiliser une valeur en pixels si vous préférez */
+}
+
+select {
+    border: 1px solid #000; /* Ceci applique une bordure noire */
+    height: 40px; /* Réglez la hauteur pour qu'elle corresponde aux autres champs */
+    font-family: inherit; /* Assurez-vous que la police correspond aux autres champs */
+    font-size: inherit; /* Assurez-vous que la taille de la*/
+}
 .card-header,
 .card-footer {
     background: #cecdcd; /* Fond noir */
@@ -196,8 +208,6 @@ a:hover{
     
 }
 
-
-
 .btn-primary:hover {
     background: #959c54; /* Changement de fond au survol */
 }
@@ -209,6 +219,9 @@ a:hover{
 .card-header h4 {
     text-align: center;
 }
+
+
+
 
 
 /*@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
