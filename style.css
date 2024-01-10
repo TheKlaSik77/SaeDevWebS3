@@ -135,6 +135,7 @@ a:hover{
    
 }
 
+
 .card {
     background: #cecdcd; /* Couleur de fond du formulaire */
     color: #000; /* Couleur du texte */
@@ -144,8 +145,19 @@ a:hover{
     padding: 2rem; /* Espacement à l'intérieur de la carte */
     width: 50%; /* Largeur du formulaire, ajustez selon votre besoin */
     max-width: 600px; /* Largeur maximale du formulaire */
+
 }
 
+.form-control, .form-select {
+    width: 92%; /* ou vous pouvez utiliser une valeur en pixels si vous préférez */
+}
+
+select {
+    border: 1px solid #000; /* Ceci applique une bordure noire */
+    height: 40px; /* Réglez la hauteur pour qu'elle corresponde aux autres champs */
+    font-family: inherit; /* Assurez-vous que la police correspond aux autres champs */
+    font-size: inherit; /* Assurez-vous que la taille de la*/
+}
 .card-header,
 .card-footer {
     background: #cecdcd; /* Fond noir */
@@ -192,8 +204,6 @@ a:hover{
     
 }
 
-
-
 .btn-primary:hover {
     background: #959c54; /* Changement de fond au survol */
 }
@@ -205,6 +215,9 @@ a:hover{
 .card-header h4 {
     text-align: center;
 }
+
+
+
 
 /* ACCUEIL */
 
@@ -314,3 +327,182 @@ a:hover{
     right:0.5em;
 }
 
+.question_faq{
+    color: var(--gris);
+}
+
+#div-realisations{
+    display: inline-flex;
+    justify-content: center;    
+}
+
+.fullLarg{
+    width: 90%;
+}
+
+.marg-choix{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+.marg-btn{
+    margin-top: 2.3em;
+}
+
+.lien_rea:link{
+    text-decoration: none;
+}
+
+.titre_rea{
+    color: black;
+}
+
+.info-reserv-logo{
+    width: 1em;
+    height: 1em;
+}
+
+.img-supps{
+    float: inline-end;
+}
+
+.img-modal-reserv{
+    width: 20em;
+    height: 20em;
+    padding: auto;
+}
+
+.description-supp{
+    font-size: large;
+}
+
+.acrd-crp{
+    background-color: var(--noir);
+}
+
+.acrd-hd{
+    background-color: var(--entreDeux);
+}
+
+.accordion-item{
+    color: var(--noir);
+    border: none;
+    border-radius: 0%;
+}
+
+.card{
+    box-shadow: 0px 0px 30px var(--bleuu);
+    color: var(--noir);
+}
+
+.bords{
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    max-width: 1500px;
+}
+
+.pad{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.bg-clr{
+    background-color: var(--noir);
+}
+
+.realisations{
+    width : 16em;
+    border-radius: 5%;
+    transition: 0.2s;
+}
+
+.realisations:hover{
+    transform : scale(1.05);
+}
+
+.align{
+    width: 33%;
+    display: inline-block;
+}
+
+
+/* ACCUEIL */
+/*
+.acc{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+    width: 50em;
+    max-height: 45em;
+}
+
+.imgAccueil{
+    display: absolute;
+    width: 16em;
+    margin:auto;
+    padding: 0.5em;
+    border-radius: 2%;
+    /* filter: blur(1px); 
+}
+
+#imgA2{
+    position: relative;
+    margin-top: 5em;
+}
+
+.text-acc{
+    color : black;
+    border : 5px solid var(--gris);
+    z-index: 1;
+    position: relative;
+    width: 500px;
+    margin:auto;
+    bottom:22em;
+    opacity: 0.7;
+    border-radius: 5%;
+    background-color: var(--gris);
+}
+
+#titre_accueil{
+    padding-top: 100px;
+    color: var(--bleuu);
+    font-weight: bolder;
+    text-align: center;
+    font-family: fantasy;
+}
+
+.carousel-item{
+    height: 40em;
+}
+
+.carousel-inner{
+    padding-top: 3em;
+}
+
+.carousel-caption{
+    left: 55%;
+    bottom: 40%;
+}
+
+.button-acc{
+    box-shadow: 0px 0px 30px var(--bleuu);
+}
+/* INFO PERSO 
+#header-info-perso{
+    display: inline-flex;
+    width:100%;
+}
+
+#titre-mes-reserv{
+    width:auto;
+}
+
+#bouton-modif-mdp{
+    position: absolute;
+    right:1em;
+}
+
+#bouton-mes-reserv{
+    margin-top: 3em;
+}
+*/
