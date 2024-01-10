@@ -15,8 +15,9 @@
 
             //Chargement des éléments permanents de la navbar
             $this->affichageMenu = '<div class="collapse navbar-collapse"><ul class="navbar-nav navbar">
-            <li class="active"><a class="nav-brand" href="index.php?module=accueil&action=accueil"></li></ul></div>';
-
+            <li class="active"><a class="nav-brand" href="index.php?module=apropos&action=a_propos"> <h3>A propos du jeu</h3></a></li>
+            <li class="active"><a class="nav-brand" href="index.php?module=tours&action=tours"> <h3>Les Tours</h3></a></li>
+            <li class="active"><a class="nav-brand" href="index.php?module=FAQ"> <h3>FAQ</h3></a></li></ul></div>';
 
             //Vérification de sécurité si l'utilisateur est toujurs connecté => alors on lui affiche le bouton deconnexion
             if (isset($_SESSION['nouvelsession'])){

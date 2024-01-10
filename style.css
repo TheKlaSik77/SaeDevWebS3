@@ -23,18 +23,17 @@ body{
 }
 
 main{
-    background: rgb(0,0,0);
+    background-color: black;
     min-height: 100vh;
-
-
 }
+
 
 
 /*CONNEXION*/
 
 h4{
     text-align: center;
-    color: black;
+    
 }
 
 button {
@@ -48,12 +47,15 @@ footer{
 }
 
 
+
 ul{
     list-style-type: none;
+    color:#959c54;
 }
 
 .nav-brand{
     text-decoration: none;
+    
 }
 
 li{
@@ -71,21 +73,14 @@ a:hover{
 #navPrincipale{
     color: var(--bleuu);
     background-color : var(--gris);
-    border-bottom: solid var(--bleuu) 2px;
+    
 }
 
 .nav-item{
     vertical-align: baseline;
 }
 
-#logo{
-    width: 4em;
-    margin-bottom: 6px;
-}
 
-#logo_perso{
-    width: 1em;
-}
 
 .navbar{
     margin : 0px;
@@ -128,6 +123,7 @@ a:hover{
     min-height: 100vh; /* Et toute la hauteur de la fenêtre */
    
 }
+
 
 #fond_inscription{
     background-image: url('../SaeDevWebS3/images/fond_connexion.png');
@@ -220,53 +216,70 @@ select {
     text-align: center;
 }
 
+/* ACCUEIL */
 
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
-
-
-/*@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
-
-:root{
-    --bleuFonce: rgba(5,28,36);
-    --noir:rgb(0,0,0);
-    --bleuu: rgb(0, 144, 240);
-    --entreDeux: rgba(0, 103, 141);
-}
-
-html{
-    min-height: 100%;
-}
-
-body{
-    font-family: 'Metal Mania', cursive;
-}
-
-main{
-    background: rgb(0,0,0);
-    min-height: 100vh;
+#fond{
+    background-image: url('../SaeDevWebS3/images/fond.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 100%; /* Assurez-vous que le container prend toute la largeur */
+    min-height: 100vh; /* Et toute la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     
-
 }
 
-footer{
-    border-top: solid var(--bleuu) 2px;
-    background-color : var(--gris);
+.acc{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+    width: 50em;
+    max-height: 45em;
+    text-align: center;
+    
 }
 
-body{
-    background-color: var(--bleuFonce);
-    min-height: 100%; 
-    margin:0; 
-    padding:0;
-    color: var(--bleuu);
+.acc h1{
+    font-size: 80px;
+    color: #ffffff;
+    text-align: center;
+    
 }
 
-ul{
-    list-style-type: none
+.acc button {
+    font-size: 24px;
 }
+
+
+#header-info-perso{
+    display: inline-flex;
+    width:100%;
+}
+
+#titre-mes-reserv{
+    width:auto;
+}
+
+#bouton-modif-mdp{
+    position: absolute;
+    right:1em;
+}
+
+#bouton-mes-reserv{
+    margin-top: 3em;
+}
+
+
+/*nava ba*/
 
 .nav-brand{
     text-decoration: none;
+    
 }
 
 li{
@@ -284,7 +297,8 @@ a:hover{
 #navPrincipale{
     color: var(--bleuu);
     background-color : var(--gris);
-    border-bottom: solid var(--bleuu) 2px;
+    border-bottom: red 2px;
+   
 }
 
 .nav-item{
@@ -303,12 +317,14 @@ a:hover{
 .navbar{
     margin : 0px;
     padding: 0px;
+    
 }
 
 .nav-droite{
     position: absolute;
     right:0.5em;
 }
+
 
 .question_faq{
     color: var(--gris);
@@ -416,85 +432,3 @@ a:hover{
     width: 33%;
     display: inline-block;
 }
-
-
-/* ACCUEIL */
-/*
-.acc{
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0%;
-    width: 50em;
-    max-height: 45em;
-}
-
-.imgAccueil{
-    display: absolute;
-    width: 16em;
-    margin:auto;
-    padding: 0.5em;
-    border-radius: 2%;
-    /* filter: blur(1px); 
-}
-
-#imgA2{
-    position: relative;
-    margin-top: 5em;
-}
-
-.text-acc{
-    color : black;
-    border : 5px solid var(--gris);
-    z-index: 1;
-    position: relative;
-    width: 500px;
-    margin:auto;
-    bottom:22em;
-    opacity: 0.7;
-    border-radius: 5%;
-    background-color: var(--gris);
-}
-
-#titre_accueil{
-    padding-top: 100px;
-    color: var(--bleuu);
-    font-weight: bolder;
-    text-align: center;
-    font-family: fantasy;
-}
-
-.carousel-item{
-    height: 40em;
-}
-
-.carousel-inner{
-    padding-top: 3em;
-}
-
-.carousel-caption{
-    left: 55%;
-    bottom: 40%;
-}
-
-.button-acc{
-    box-shadow: 0px 0px 30px var(--bleuu);
-}
-/* INFO PERSO 
-#header-info-perso{
-    display: inline-flex;
-    width:100%;
-}
-
-#titre-mes-reserv{
-    width:auto;
-}
-
-#bouton-modif-mdp{
-    position: absolute;
-    right:1em;
-}
-
-#bouton-mes-reserv{
-    margin-top: 3em;
-}
-*/
