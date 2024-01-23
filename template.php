@@ -8,12 +8,13 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
 	<meta charset="ISO-8859-1">
 	<meta name="viewport"content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-	<title>Après la Pluie</title>
+	<title>Metallic Infestation</title>
     <link rel="icon" type="image/x-icon" href="administration/media/logo.ico">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    
     <script
 	  src="https://code.jquery.com/jquery-3.6.1.min.js"
 	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -59,18 +60,11 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
                     </svg>
                     </a>
                 </section>
-
-                <section class="mb-4">
-                    <p>
-                        Apres la pluie est un service permettant de commander des clips en ligne. Le but est de changer la façon dont les artistes
-                        trouves des clipers et aussi qu'ils puissent choisir exactement le materiel qui sera utilisé dans le clip.
-                    </p>
-                </section>
             </div>
             <div class="text-center p-3">
             Version 1.0 - 2022/12/01 -
             GNU GPL Copyleft 🄯 2022-2032 -
-            Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA
+            Initiated by Amelia & Yasmine BEN YOUSSEF | Kylian LASIK | Marielle VALLEE
             </div>
         </footer>
     </div>

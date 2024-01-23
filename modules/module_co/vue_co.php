@@ -2,6 +2,10 @@
 GNU GPL Copyleft 🄯 2022-2032 -
 Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
 
+<!-- Version 1.0 - 2022/12/05 -
+GNU GPL Copyleft 🄯 2022-2032 -
+Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
+
 <?php
 
     class VueCo extends VueGenerique {
@@ -9,49 +13,45 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
 
         public function form_connexion(){
 ?>
-                <div class="container py-5" >
-                    <div class="card">
+        
+               
+                <div class="container py-5" id ="fond_connexion">
+                    <div class="card" >
                         <form action='index.php?module=co&action=validerco' method='post'>
                         <input type="hidden" id="exampleInput1" name="token" value="<?php echo $_SESSION['token'] ?>" required>
                         <!-- header -->
-                        <div class="card-header py-4 px-5 bg-light border-0">
-                            <h4 class="mb-0 fw-bold">Connexion</h4>
-                        </div>
+                        
+                            <h4 class="mb-0 ">Connexion</h4>
+                        
 
                         <!-- body -->
                         <div class="card-body px-5">
-                            <!-- Account section -->
-                            <div class="row gx-xl-5">
-                            <div class="col-md-4">
-                                <h5>Compte</h5>
-                                <p class="text-muted">Connectez vous !</p>
-                            </div>
-
-                            <div class="col-md-8">
-                                <div class="mb-3">
-                                    <label for="exampleInput1" class="form-label"
-                                            >Login</label
-                                        >
-                                    <input type="text" class="form-control" id="exampleInput1" style="max-width: 500px;" name='login'/>
-                                </div>
-                                <div class="mb-3">
-
-                                    <label for="exampleInput1" class="form-label"
-                                            >Mot De Passe</label
-                                        >
-                                    <input type="password" class="form-control" id="exampleInput1" style="max-width: 500px;" name='password'/>
-                                </div>
-                            <hr class="my-5" />
+                            
+                        <!-- Account section -->
+                        <div class="account-section">
+                
+                        <div class="login-field">
+                            <label for="login">Login</label>
+                            <input type="text" class="form-control" id="login"  name='login' placeholder="Nom d'utilisateur"/>
+                        </div>
+                        <div class="login-field">
+                            <label for="password">Mot De Passe</label>
+                            <input type="password" class="form-control" id="password" name='password' placeholder="Mot de passe"/>
+                        </div>
+                        <div class="btn-class">
+                        <button id="btn" type="submit" class="btn btn-primary">
+                            Se Connecter !
+                        </button>
+                        </div>
+                        </div>
                         
                         <!-- footer -->
-                        <div class="card-footer text-end py-4 px-5 bg-light border-0">
-                            <button type="submit" class="btn btn-primary btn-rounded">
-                            Se Connecter !
-                            </button>
-                        </div>
-                        </form>
-                    </div>
-                </div>
+                        
+                
+           
+        </form>
+    </div>
+</div>
             <?php
         }
      
@@ -61,7 +61,7 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
 
         public function form_inscription(){
             ?>
-                <div class="container py-5">
+                <div class="container py-5" id="fond_inscription">
                     <div class="card">
                         <form action='index.php?module=co&action=validerins' method='post'>
                         <input type="hidden" id="exampleInput1" name="token" value="<?php echo $_SESSION['token'] ?>" required>
