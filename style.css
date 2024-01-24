@@ -237,6 +237,10 @@ footer{
     
 }
 
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+  }
 
 
 .nav-brand{
@@ -366,8 +370,39 @@ select {
 
 
 
-
 /* ACCUEIL */
+
+
+#fond{
+    background-image: url('../SaeDevWebS3/images/fond.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 100%; /* Assurez-vous que le container prend toute la largeur */
+    min-height: 100vh; /* Et toute la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.acc{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+    width: 50em;
+    max-height: 45em;
+    text-align: center;
+    
+}
+
+.acc h1{
+    font-size: 80px;
+    color: #ffffff;
+    text-align: center;
+    
+}
 
 
 
@@ -396,6 +431,127 @@ select {
     margin: auto;
 }
 
+.nav-item{
+    vertical-align: baseline;
+}
+
+#logo{
+    width: 4em;
+    margin-bottom: 6px;
+}
+
+#logo_perso{
+    width: 1em;
+}
+
+.navbar{
+    margin : 0px;
+    padding: 0px;
+    
+}
+
+.nav-droite{
+    position: absolute;
+    right:0.5em;
+}
+
+.question_faq{
+    color: var(--gris);
+}
+
+#div-realisations{
+    display: inline-flex;
+    justify-content: center;    
+}
+
+.fullLarg{
+    width: 90%;
+}
+
+.marg-choix{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+.marg-btn{
+    margin-top: 2.3em;
+}
+
+.lien_rea:link{
+    text-decoration: none;
+}
+
+.titre_rea{
+    color: black;
+}
+
+.info-reserv-logo{
+    width: 1em;
+    height: 1em;
+}
+
+.img-supps{
+    float: inline-end;
+}
+
+.img-modal-reserv{
+    width: 20em;
+    height: 20em;
+    padding: auto;
+}
+
+.description-supp{
+    font-size: large;
+}
+
+.acrd-crp{
+    background-color: var(--noir);
+}
+
+.acrd-hd{
+    background-color: var(--entreDeux);
+}
+
+.accordion-item{
+    color: var(--noir);
+    border: none;
+    border-radius: 0%;
+}
+
+.card{
+    box-shadow: 0px 0px 30px var(--bleuu);
+    color: var(--noir);
+}
+
+.bords{
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    max-width: 1500px;
+}
+
+.pad{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.bg-clr{
+    background-color: var(--noir);
+}
+
+.realisations{
+    width : 16em;
+    border-radius: 5%;
+    transition: 0.2s;
+}
+
+.realisations:hover{
+    transform : scale(1.05);
+}
+
+.align{
+    width: 33%;
+    display: inline-block;
+}
 
 
 /* ACCUEIL */
