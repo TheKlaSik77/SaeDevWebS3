@@ -3,6 +3,7 @@
     include_once('Composants/CompMenu/mod_menu.php');
     include_once('modules/module_co/mod_co.php');
     include_once('modules/module_accueil/mod_accueil.php');
+    include_once('modules/pageClassement/mod_classement.php');
 
    
 
@@ -27,6 +28,10 @@
                 
                 case 'accueil':
                     new ModAccueil();
+                    break;
+                    
+                case 'classement':
+                    new ModClassement();
                     break;
 
                 default :
