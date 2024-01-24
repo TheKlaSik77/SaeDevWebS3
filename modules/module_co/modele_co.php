@@ -12,9 +12,9 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
         }
 
         public function inscription(){
-            if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['nom_artiste']) && isset($_POST['email']) && isset($_POST['tel']) && !empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['nom_artiste']) && !empty($_POST['email']) && !empty($_POST['tel'])){
-                $oui = array($_POST['login'], password_hash($_POST['password'], PASSWORD_DEFAULT), $_POST['nom'], $_POST['prenom'], $_POST['nom_artiste'], $_POST['email'], $_POST['tel'], $_POST['preference_contact']);
-                $req = self::$bdd->prepare("INSERT INTO utilisateurs (login, password, nom, prenom, nom_artiste, mail, num_tel, preference_contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            if(isset($_POST['login']) && isset($_POST['mdp'])  && isset($_POST['mail']) && !empty($_POST['login']) && !empty($_POST['mdp'])  && !empty($_POST['mail'])){
+                $oui = array($_POST['login'], $_POST['mdp'],  $_POST['mail'], $_POST['pays']);
+                $req = self::$bdd->prepare("INSERT INTO utilisateurs (login, mdp, mail) VALUES (?, ?, ?)");
                 $req->execute($oui);
                 return ($_POST['login']);
             }
@@ -31,16 +31,16 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
             }
         }
 
-        public function verifMdp($login, $password){
-            $req = self::$bdd->prepare('SELECT password FROM utilisateurs WHERE login =  ?');
+        /*public function verifMdp($login, $mdp){
+            $req = self::$bdd->prepare('SELECT mdp FROM utilisateurs WHERE login =  ?');
             $req->execute(array($login));
             $tab = $req->fetch();
-            return (password_verify($password,$tab['password']));
-        }
+            return (password_verify($mdp,$tab['mdp']));
+        }*/
 
         public function connexion(){
             if (!isset($_SESSION["nouvelsession"])){
-                if ($this->verifLogin($_POST['login']) && $this->verifMdp($_POST['login'], $_POST['password'])){
+                if ($this->verifLogin($_POST['login']) /*&& $this->verifMdp($_POST['login'], $_POST['mdp'])*/){
                     $_SESSION["nouvelsession"] = 0;
                     $req = self::$bdd->prepare('SELECT id FROM utilisateurs WHERE login =  ?');
                     $req->execute(array($_POST['login']));
