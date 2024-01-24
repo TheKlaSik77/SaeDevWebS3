@@ -46,7 +46,23 @@ class Controleur
             case 'cartes':
                 new ModCarte();
                 break;
+            
+            case 'classement':
+                new ModClassement();
+                break;
 
+            case 'telechargement':
+                new ModTele();
+                break;
+                
+            case 'apropos':
+                new ModApropos();
+                break;
+
+            case 'FAQ':
+                new ModFAQ();
+                break;
+                
             default:
                 echo 'default';
                 break;
