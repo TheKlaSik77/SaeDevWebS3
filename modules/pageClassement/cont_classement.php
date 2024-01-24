@@ -38,8 +38,7 @@
                     }
                     break;
                 case "login":
-                    echo "BIEN ENTRE";
-
+                    //echo $_GET["login"];
                 default :
                 
             }

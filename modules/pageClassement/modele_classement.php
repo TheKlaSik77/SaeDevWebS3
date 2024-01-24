@@ -57,5 +57,9 @@ class ModeleClassement extends Connexion
         return $resultatSelect->fetchAll(PDO::FETCH_ASSOC);
 
     }
+
+    public function StatistiquesLogin(){
+        
+    }
 }
 ?>
