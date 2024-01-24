@@ -1,7 +1,3 @@
-<!-- Version 1.0 - 2022/12/05 -
-GNU GPL Copyleft 🄯 2022-2032 -
-Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
-
 <?php
     include_once('vue_accueil.php');
     class ContAccueil{
@@ -12,6 +8,10 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
 
         public function __construct(){
             $this->vue = new VueAccueil();
+        }
+
+        public function setAction($action) {
+            $this->action = $action;
         }
 
         public function accueil(){
