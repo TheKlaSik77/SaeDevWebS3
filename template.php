@@ -20,7 +20,7 @@ Initialized Amelia & Yasmine BEN YOUSSEF | Kylian LASIK | Marielle VALLEE -->
 	  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 	  crossorigin="anonymous">
     </script>
-    
+
 
 </head>
 <body>
@@ -30,7 +30,8 @@ Initialized Amelia & Yasmine BEN YOUSSEF | Kylian LASIK | Marielle VALLEE -->
                 <?php
                     $controleur = new Controleur;
                     $controleur->menu();
-                ?>
+                
+                ?>  
             </nav>
         </header>
 

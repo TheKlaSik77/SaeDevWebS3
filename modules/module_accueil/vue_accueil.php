@@ -11,19 +11,18 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
         }
 
         public function afficher_accueil(){
-            ?>
-                
-                
+            ?> 
                 <div id="fond">
                 <div class="acc" >
                     <h1 id="titre_accueil"> METALLIC INFESTATION </h1>
                     <div class="btn-class">
                         <button id="btn" type="submit" class="btn btn-primary">
-                            Joueur Maintenant !
+                        <a href="index.php?module=telechargement&action=telechargement">Joueur Maintenant !
                         </button>
                         </div>
                 </div>
                 </div>
+     
             <?php
         }
     }

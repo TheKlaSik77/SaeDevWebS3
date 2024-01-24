@@ -9,6 +9,8 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
     class ModAccueil{
         public function __construct(){
             $controleur = new ContAccueil();
+            $action = isset($_GET['action']) ? $_GET['action'] : "accueil";
+            $controleur->setAction($action);
             $controleur->exec();
         }
     }

@@ -13,6 +13,7 @@ class VueCo extends VueGenerique
     public function form_connexion()
     {
         ?>
+    
 
         <div class="container py-5" id="fond_connexion">
             <div class="card">
