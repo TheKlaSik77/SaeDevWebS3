@@ -11,6 +11,14 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
         public function __construct(){
         }
 
+<<<<<<< HEAD
+        public function inscription(){
+            if(isset($_POST['login']) && isset($_POST['mdp'])  && isset($_POST['mail']) && !empty($_POST['login']) && !empty($_POST['mdp'])  && !empty($_POST['mail'])){
+                $oui = array($_POST['login'], $_POST['mdp'],  $_POST['mail'], $_POST['pays']);
+                $req = self::$bdd->prepare("INSERT INTO utilisateurs (login, mdp, mail) VALUES (?, ?, ?)");
+                $req->execute($oui);
+                return ($_POST['login']);
+=======
 
         public function inscription() {
             if(isset($_POST['login'], $_POST['password'], $_POST['mail'], $_POST['pays']) &&
@@ -33,6 +41,7 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
                 }
             } else {
                 die("Tous les champs sont requis");
+>>>>>>> c93a3201f39b90ae71183e2d60cf482dcdf255cc
             }
         }
         
@@ -52,12 +61,12 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
             $req = self::$bdd->prepare('SELECT password FROM utilisateur WHERE login =  ?');
             $req->execute(array($login));
             $tab = $req->fetch();
-            return (password_verify($password,$tab['password']));
-        }
+            return (password_verify($mdp,$tab['mdp']));
+        }*/
 
         public function connexion(){
             if (!isset($_SESSION["nouvelsession"])){
-                if ($this->verifLogin($_POST['login']) && $this->verifMdp($_POST['login'], $_POST['password'])){
+                if ($this->verifLogin($_POST['login']) /*&& $this->verifMdp($_POST['login'], $_POST['mdp'])*/){
                     $_SESSION["nouvelsession"] = 0;
                     $req = self::$bdd->prepare('SELECT id FROM utilisateur WHERE login =  ?');
                     $req->execute(array($_POST['login']));
