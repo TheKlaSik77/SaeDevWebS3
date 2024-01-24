@@ -1,9 +1,3 @@
-/* Version 1.0 - 2022/12/05 -
-GNU GPL Copyleft 🄯 2022-2032 -
-Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA */
-/* Version 1.0 - 2022/12/05 -
-GNU GPL Copyleft 🄯 2022-2032 -
-Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA */
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
 :root{
@@ -46,6 +40,10 @@ footer{
     
 }
 
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+  }
 
 
 ul{
@@ -185,7 +183,7 @@ select {
 .login-field input {
     background: #ffffff; /* Fond des champs de saisie */
     border: 1px solid #333; /* Bordure des champs de saisie */
-    color: #fff; /* Texte des champs de saisie */
+    color: #333; /* Texte des champs de saisie */
     padding: 10px;
     width: calc(100% - 22px); /* Ajustement de la largeur */
 }
@@ -216,9 +214,11 @@ select {
     text-align: center;
 }
 
+
+
+
 /* ACCUEIL */
 
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
 #fond{
     background-image: url('../SaeDevWebS3/images/fond.png');
@@ -325,7 +325,6 @@ a:hover{
     right:0.5em;
 }
 
-
 .question_faq{
     color: var(--gris);
 }
@@ -394,15 +393,6 @@ a:hover{
     color: var(--noir);
 }
 
-.card-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-
-
 .bords{
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
@@ -432,3 +422,85 @@ a:hover{
     width: 33%;
     display: inline-block;
 }
+
+
+/* ACCUEIL */
+/*
+.acc{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+    width: 50em;
+    max-height: 45em;
+}
+
+.imgAccueil{
+    display: absolute;
+    width: 16em;
+    margin:auto;
+    padding: 0.5em;
+    border-radius: 2%;
+    /* filter: blur(1px); 
+}
+
+#imgA2{
+    position: relative;
+    margin-top: 5em;
+}
+
+.text-acc{
+    color : black;
+    border : 5px solid var(--gris);
+    z-index: 1;
+    position: relative;
+    width: 500px;
+    margin:auto;
+    bottom:22em;
+    opacity: 0.7;
+    border-radius: 5%;
+    background-color: var(--gris);
+}
+
+#titre_accueil{
+    padding-top: 100px;
+    color: var(--bleuu);
+    font-weight: bolder;
+    text-align: center;
+    font-family: fantasy;
+}
+
+.carousel-item{
+    height: 40em;
+}
+
+.carousel-inner{
+    padding-top: 3em;
+}
+
+.carousel-caption{
+    left: 55%;
+    bottom: 40%;
+}
+
+.button-acc{
+    box-shadow: 0px 0px 30px var(--bleuu);
+}
+/* INFO PERSO 
+#header-info-perso{
+    display: inline-flex;
+    width:100%;
+}
+
+#titre-mes-reserv{
+    width:auto;
+}
+
+#bouton-modif-mdp{
+    position: absolute;
+    right:1em;
+}
+
+#bouton-mes-reserv{
+    margin-top: 3em;
+}
+*/
