@@ -1,7 +1,3 @@
-<!-- Version 1.0 - 2022/12/05 -
-GNU GPL Copyleft 🄯 2022-2032 -
-Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
-
 <?php
 
 class VueCo extends VueGenerique
@@ -10,6 +6,40 @@ class VueCo extends VueGenerique
     {
         parent::__construct();
     }
+    public function confirm_inscription($login) {
+        ?>
+            Inscription de <?=$login?> réussie !
+        <?php
+            }
+            public function erreur_inscription($login) {
+        ?>
+            Echec de l'inscription de <?=$login?>
+        <?php
+            }
+        
+            public function confirm_connexion ($login) {
+        ?>
+            Connexion en tant que <?=$login?> réussie !
+        <?php
+            }
+        
+            public function echec_connexion ($login) {
+        ?>
+            Echec de la connexion en tant que <?=$login?>
+        <?php
+            }
+        
+            public function utilisateur_inconnu ($login) {
+        ?>
+            Utilisateur <?=$login?> inconnu
+        <?php
+            }
+        
+            public function confirm_deconnexion() {
+                ?>
+                Vous êtes bien déconnecté(e)
+                <?php
+            }
     public function form_connexion()
     {
         ?>
@@ -82,19 +112,20 @@ class VueCo extends VueGenerique
                                 <input type="password" class="form-control" id="password" name='mdp'
                                     placeholder="Mot de passe" />
                             </div>
-    
                             <div class="login-field">
                                 <label for="exampleInput2" class="form-label">Adresse Email</label>
+<<<<<<< HEAD
                                 <input type="email" class="form-control" id="exampleInput2" name='mail'
+=======
+                                <input type="email" class="form-control" id="mail" name='mail'
+>>>>>>> c93a3201f39b90ae71183e2d60cf482dcdf255cc
                                     placeholder="Adresse.Mail@exemple.com"
                                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
                             </div>
                             <div class="login-field">
-                                <label for="exampleInput2" class="form-label">Pays</label>
-                                <select id="disabledSelect" class="form-control form-select">
-                                    <option>Selectionner pays</option>
-                                    <!-- Ajouter des options de pays ici / cf BD -->
-                                </select>
+                                <label for="login">Pays</label>
+                                <input type="text" class="form-control" id="pays" name='pays'
+                                    placeholder="pays" />
                             </div>
                             <div class="btn-class">
                                 <button id="btn" type="submit" class="btn btn-primary">
@@ -109,6 +140,8 @@ class VueCo extends VueGenerique
         </div>
 
         <?php
+
+        
     }
 
 }

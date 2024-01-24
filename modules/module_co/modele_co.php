@@ -7,21 +7,47 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
     include_once('connexion.php');
 
     class ModeleCo extends Connexion{
-        
+    
         public function __construct(){
         }
 
+<<<<<<< HEAD
         public function inscription(){
             if(isset($_POST['login']) && isset($_POST['mdp'])  && isset($_POST['mail']) && !empty($_POST['login']) && !empty($_POST['mdp'])  && !empty($_POST['mail'])){
                 $oui = array($_POST['login'], $_POST['mdp'],  $_POST['mail'], $_POST['pays']);
                 $req = self::$bdd->prepare("INSERT INTO utilisateurs (login, mdp, mail) VALUES (?, ?, ?)");
                 $req->execute($oui);
                 return ($_POST['login']);
+=======
+
+        public function inscription() {
+            if(isset($_POST['login'], $_POST['password'], $_POST['mail'], $_POST['pays']) &&
+               !empty($_POST['login']) && !empty($_POST['password']) &&
+               !empty($_POST['mail']) && !empty($_POST['pays'])) {
+        
+                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    
+                $req = self::$bdd->prepare("INSERT INTO Utilisateur (login, mdp, mail, pays) VALUES (:log, :mdp, :mail, :pays)");
+                $req->bindValue(':log', $_POST['login']);
+                $req->bindValue(':mdp', $password);
+                $req->bindValue(':mail', $_POST['mail']);
+                $req->bindValue(':pays', $_POST['pays']);
+        
+                if($req->execute()) {
+                    echo "Inscription réussie !";
+                } else {
+                    $errorInfo = $req->errorInfo();
+                    echo "Erreur lors de l'insertion dans la base de données: " . $errorInfo[2];
+                }
+            } else {
+                die("Tous les champs sont requis");
+>>>>>>> c93a3201f39b90ae71183e2d60cf482dcdf255cc
             }
         }
-
+        
+        
         public function verifLogin($login){
-            $req = self::$bdd->prepare('SELECT * FROM utilisateurs WHERE login =  ?');
+            $req = self::$bdd->prepare('SELECT * FROM utilisateur WHERE login =  ?');
             $req->execute(array($login));
             $tab = $req->fetchAll();
             if (!empty($tab)){
@@ -31,8 +57,8 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
             }
         }
 
-        /*public function verifMdp($login, $mdp){
-            $req = self::$bdd->prepare('SELECT mdp FROM utilisateurs WHERE login =  ?');
+        public function verifMdp($login, $password){
+            $req = self::$bdd->prepare('SELECT password FROM utilisateur WHERE login =  ?');
             $req->execute(array($login));
             $tab = $req->fetch();
             return (password_verify($mdp,$tab['mdp']));
@@ -42,13 +68,13 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
             if (!isset($_SESSION["nouvelsession"])){
                 if ($this->verifLogin($_POST['login']) /*&& $this->verifMdp($_POST['login'], $_POST['mdp'])*/){
                     $_SESSION["nouvelsession"] = 0;
-                    $req = self::$bdd->prepare('SELECT id FROM utilisateurs WHERE login =  ?');
+                    $req = self::$bdd->prepare('SELECT id FROM utilisateur WHERE login =  ?');
                     $req->execute(array($_POST['login']));
                     $tab = $req->fetch();
                     $_SESSION["id"] = $tab[0];
 
                     // Connexion en tant qu'admin
-                    $requete = self::$bdd->prepare('SELECT admin FROM roles JOIN utilisateurs ON(roles.id_utilisateur = utilisateurs.id) WHERE login =  ?');
+                    $requete = self::$bdd->prepare('SELECT admin FROM roles JOIN utilisateur ON(roles.id_utilisateur = utilisateurs.id) WHERE login =  ?');
                     $requete->execute(array($_POST['login']));
                     $t = $requete->fetch();
                     if ($t[0] == true){
@@ -69,5 +95,6 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
         public function deconnexion(){
             unset($_SESSION["nouvelsession"]);
         }
+    
     }
 ?>
