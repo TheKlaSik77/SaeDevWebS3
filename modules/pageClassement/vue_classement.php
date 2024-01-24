@@ -13,18 +13,21 @@ class VueClassement extends VueGenerique
         <div>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php?module=classement&action=mondial">Classement Mondial</a>
+                    <a class="nav-link active" aria-current="page" href="index.php?module=classement&action=mondial">Classement
+                        Mondial</a>
                 </li>
-                <?php if (isset($_SESSION["nouvelsession"])){
+                <?php if (isset($_SESSION["nouvelsession"])) {
                     ?>
                     <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="index.php?module=classement&action=joueur">Mes statistiques</a>
-                </li>
-                <?php }else{
+                        <a class="nav-link" aria-current="page" href="index.php?module=classement&action=joueur">Mes
+                            statistiques</a>
+                    </li>
+                <?php } else {
                     ?>
-                     <li class="nav-item">
-                     <a class="nav-link disabled" aria-disabled="true" href="index.php?module=classement&action=joueur">Mes statistiques</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true" href="index.php?module=classement&action=joueur">Mes
+                            statistiques</a>
+                    </li>
                 <?php } ?>
             </ul>
         </div>
@@ -52,13 +55,17 @@ class VueClassement extends VueGenerique
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <?php foreach ($tableau as $index => $data): ?>
+                    <?php foreach ($tableau as $index => $data):
+                        $login = $data['login']; ?>
                         <tr>
+
                             <th scope="row">
                                 <?php echo $index + 1; ?>
                             </th>
                             <td>
-                                <?php echo $data['login']; ?>
+                                <a href="index.php?module=classement&action=login">
+                                    <?php echo $login; ?>
+                                </a>
                             </td>
                             <td>
                                 <?php echo $data['nbTourelles']; ?>

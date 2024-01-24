@@ -37,6 +37,8 @@
                     $this->vue->afficherStatistiquesJoueur($joueur);
                     }
                     break;
+                case "login":
+                    echo "BIEN ENTRE";
 
                 default :
                 
