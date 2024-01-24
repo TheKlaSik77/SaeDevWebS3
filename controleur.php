@@ -2,6 +2,8 @@
     include_once('vue_generique.php');
     include_once('Composants/CompMenu/mod_menu.php');
     include_once('modules/module_co/mod_co.php');
+    include_once('modules/module_accueil/mod_accueil.php');
+    include_once('modules/pageClassement/mod_classement.php');
 
    
 
@@ -11,7 +13,7 @@
 
         public function __construct (){
             $this->vue = new VueGenerique();
-            $this->module = isset($_GET['module']) ? $_GET['module'] : "co";
+            $this->module = isset($_GET['module']) ? $_GET['module'] : "accueil";
         }
 
         public function menu() {
@@ -22,6 +24,14 @@
             switch($this->module){
                 case 'co' :
                     new ModCo();
+                    break;
+                
+                case 'accueil':
+                    new ModAccueil();
+                    break;
+                    
+                case 'classement':
+                    new ModClassement();
                     break;
 
                 default :
