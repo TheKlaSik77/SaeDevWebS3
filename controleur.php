@@ -6,6 +6,7 @@
     include_once('modules/module_FAQ/mod_faq.php');
     include_once('modules/module_apropos/mod_apropos.php');
     include_once('modules/module_telechargement/mod_telechargement.php');
+    include_once('modules/pageClassement/mod_classement.php');
 
    
 
@@ -30,6 +31,10 @@
                 
                 case 'accueil':
                     new ModAccueil();
+                    break;
+                    
+                case 'classement':
+                    new ModClassement();
                     break;
 
                 case 'telechargement':
