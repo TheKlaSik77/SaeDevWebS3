@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('MY_APP')) {
+  die("Accès interdit");
+}
+
 class VueCarte extends VueGenerique
 {
   public function __construct()
@@ -34,7 +39,6 @@ class VueCarte extends VueGenerique
       #carouselExampleCaptions {
         width: 65%;
         margin: auto;
-        padding-bottom: 30px;
       }
 
       #carouselExampleCaptions p {

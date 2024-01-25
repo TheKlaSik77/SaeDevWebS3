@@ -12,7 +12,6 @@ HTML
 **********************************************/
 html{
     min-height: 100%;
-    
 }
 
 /*********************************************
@@ -20,7 +19,6 @@ BODY
 **********************************************/
 body{
     font-family: 'Metal Mania', cursive;
-    
 
 }
 
@@ -283,7 +281,7 @@ li{
 }
 
 #fond_connexion{
-    background-image: url(images/fond_download.png);
+    background-image: url('../SaeDevWebS3/images/fond_connexion.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -294,7 +292,7 @@ li{
 
 
 #fond_inscription{
-    background-image: url(images/fond_download.png);
+    background-image: url('../SaeDevWebS3/images/fond_connexion.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

@@ -8,6 +8,7 @@ class ContCo
     private $action;
 
 
+
     public function __construct()
     {
         include_once('vue_co.php');
@@ -55,6 +56,7 @@ class ContCo
             //header("Location: index.php?module=co&action=connexion");
         }
     }
+
 
     public function exec()
     {

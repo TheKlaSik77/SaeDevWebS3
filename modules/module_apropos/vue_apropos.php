@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
+
 class VueApropos extends VueGenerique
 {
 
@@ -82,6 +86,7 @@ class VueApropos extends VueGenerique
 
                 .game-elements-section .container {
                     background-color: #f4f4f4;
+                    background-color: #f4f4f4;
                 }
 
                 .play-button {
@@ -100,10 +105,11 @@ class VueApropos extends VueGenerique
         <body>
             <div class="about-section">
                 <div class="container">
-                    <h2>À Propos de Notre Site</h2>
+                    <h2>À Propos de Notre Site de Jeux Vidéo</h2>
                     <p>
-                        Bienvenue sur notre site dédié aux passionnés de Metallic Infestation.
-                        Ici, vous trouverez l'univers du jeu, les élemnts et autre encore...
+                        Bienvenue sur notre site dédié aux passionnés de jeux vidéo.
+                        Ici, vous trouverez les dernières actualités, critiques, et
+                        discussions sur vos jeux préférés.
                     </p>
                 </div>
             </div>
@@ -121,6 +127,7 @@ class VueApropos extends VueGenerique
             <div class="game-elements-section">
                 <hr>
                 <div class="container">
+                <div class="container">
                     <h2>Explorez les Éléments du Jeu</h2>
                     <div class="row">
                         <div class="col-md-4 d-flex">
@@ -129,9 +136,10 @@ class VueApropos extends VueGenerique
                                 <div class="card-body">
                                     <h5 class="card-title">Ennemis</h5>
                                     <p class="card-text">Découvrez les différents ennemis du jeu...</p>
-                                    <a href="index.php?module=ennemis&action=ennemis" class="btn btn-primary">Explorer</a>
+                                    <a href="#" class="btn btn-primary">Explorer</a>
                                     <hr>
                                 </div>
+
 
                             </div>
                         </div>
@@ -153,7 +161,7 @@ class VueApropos extends VueGenerique
                                 <div class="card-body">
                                     <h5 class="card-title">Cartes</h5>
                                     <p class="card-text">Explorez les paysages épiques du jeu...</p>
-                                    <a href="index.php?module=cartes&action=cartes" class="btn btn-primary">Explorer</a>
+                                    <a href="#" class="btn btn-primary">Explorer</a>
                                     <hr>
                                 </div>
                             </div>
@@ -170,6 +178,7 @@ class VueApropos extends VueGenerique
 
         </html>
         <?php
+        
     }
 }
 ?>

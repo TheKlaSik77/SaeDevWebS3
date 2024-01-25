@@ -1,5 +1,7 @@
 <?php
-
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
 include_once('connexion.php');
 
 class ModeleCo extends Connexion
@@ -27,7 +29,7 @@ class ModeleCo extends Connexion
                 $result = $req->execute();
 
                 if ($result === false) {
-                   return -2;
+                    return -2;
                 }
 
             } catch (Exception $e) {
@@ -61,18 +63,9 @@ class ModeleCo extends Connexion
     {
         try {
             $req = self::$bdd->prepare("SELECT * from Utilisateur WHERE login=:log");
-            echo $_POST['login'];
-            $req->bindValue(':log',$_POST['login']);
+            $req->bindValue(':log', $_POST['login']);
             $resultat = $req->execute();
 
-            if ($resultat == false) {
-                echo "FALSE";
-            }
-            else{
-                echo "true";
-
-            }
-           
             return $resultat;
         } catch (Exception $e) {
             echo "resultat faux";
@@ -83,16 +76,13 @@ class ModeleCo extends Connexion
     {
         try {
             $req = self::$bdd->prepare("SELECT mdp from Utilisateur WHERE login=:log");
-            echo $_POST['login'];
-            $req->bindValue(':log',$_POST['login']);
+            $req->bindValue(':log', $_POST['login']);
             $resultat = $req->execute();
             $password = $req->fetchColumn();
             if ($resultat == false) {
-                echo "FALSE";
-            }
-            else{
-                echo "OK";
-                return (password_verify($_POST['mdp'],$password));
+                return $resultat;
+            } else {
+                return (password_verify($_POST['mdp'], $password));
             }
 
         } catch (Exception $e) {
@@ -103,14 +93,8 @@ class ModeleCo extends Connexion
     public function connexion()
     {
         if (!isset($_SESSION["nouvelsession"])) {
-            echo "dedans";
-            echo "<br>";
-            var_dump($this->verifLogin());
-            echo "<br>";
-            var_dump($this->verifMdp());
-            echo "<br>";
 
-            if($this->verifLogin() && $this->verifMdp()){
+            if ($this->verifLogin() && $this->verifMdp()) {
                 $_SESSION["nouvelsession"] = 0;
 
                 try {
@@ -119,16 +103,8 @@ class ModeleCo extends Connexion
                     $req->bindValue(':log',$_POST['login']);
                     $resultat = $req->execute();
                     $id = $req->fetchColumn();
-                    echo $id;
                     $_SESSION["id"] = $id;
 
-                    if ($resultat == false) {
-                        echo "FALSE";
-                    }
-                    else{
-                        echo "OK";
-                    }
-        
                 } catch (Exception $e) {
                     echo "resultat faux";
                 }
@@ -142,12 +118,12 @@ class ModeleCo extends Connexion
                 } else {
                     return 1;
                 }*/
-                
+
             } else {
-                die("mauvais mot de passe ou nom d'utilisateurs");
+                return -1;
             }
         } else {
-            return -1;
+            return -2;
         }
     }
 

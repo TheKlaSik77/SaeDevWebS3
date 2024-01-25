@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
+
 class VueClassement extends VueGenerique
 {
 

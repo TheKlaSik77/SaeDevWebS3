@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
+
     include_once('vue_generique.php');
     include_once('Composants/CompMenu/mod_menu.php');
     include_once('modules/module_co/mod_co.php');
@@ -9,9 +14,6 @@
     include_once('modules/pageClassement/mod_classement.php');
     include_once('modules/module_tours/mod_tours.php');
     include_once('modules/module_cartes/mod_cartes.php');
-    include_once('modules/module_profil/mod_profil.php');
-    include_once('modules/module_ennemis/mod_ennemis.php');
-
 
 
 class Controleur
@@ -64,13 +66,6 @@ class Controleur
             case 'FAQ':
                 new ModFAQ();
                 break;
-            
-            case 'profil':
-                new ModProfil();
-                break;
-                case'ennemis':
-                    new ModEnnemi();
-                    break;
                 
             default:
                 echo 'default';

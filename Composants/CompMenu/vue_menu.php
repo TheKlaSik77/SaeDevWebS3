@@ -1,20 +1,29 @@
 <?php
-    class VueMenu extends VueGenerique {
 
-        private $affichageMenu;
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
+class VueMenu extends VueGenerique
+{
 
-        public function __construct () {}
+    private $affichageMenu;
 
-        //La méthode affiche le contenu html stocké dans la variable affichageMenu
-        public function affiche() {
-            echo $this->affichageMenu;
-        }
+    public function __construct()
+    {
+    }
 
-        //La méthode charge des blocs d'html dans la variable affichageMenu
-        public function menu($admin){
+    //La méthode affiche le contenu html stocké dans la variable affichageMenu
+    public function affiche()
+    {
+        echo $this->affichageMenu;
+    }
 
-            //Chargement des éléments permanents de la navbar
-            $this->affichageMenu = '<div class="collapse navbar-collapse"><ul class="navbar-nav navbar">
+    //La méthode charge des blocs d'html dans la variable affichageMenu
+    public function menu($admin)
+    {
+
+        //Chargement des éléments permanents de la navbar
+        $this->affichageMenu = '<div class="collapse navbar-collapse"><ul class="navbar-nav navbar">
             <li class="active"><a class="nav-brand" href="index.php?module=accueil&action=accueil">
                 <img id="logo" class"d-inline-block align-top" src="images/logo.jpg" style="height: 30px; width: auto; margin-right: 10px; margin-left:20px"></a></li>
             <li class="active"><a class="nav-brand" href="index.php?module=apropos&action=a_propos"><h3>A propos</h3></a></li>
@@ -24,35 +33,35 @@
             <li class="active"><a class="nav-brand" href="index.php?module=classement&action=classement&action=mondial"> <h3>Classement</h3></a></li>
             <li class="active"><a class="nav-brand" href="index.php?module=FAQ"> <h3>FAQ</h3></a></li></ul></div>';
 
-            //Vérification de sécurité si l'utilisateur est toujurs connecté => alors on lui affiche le bouton deconnexion
-            if (isset($_SESSION['nouvelsession'])){
-                $this->affichageMenu = $this->affichageMenu .
+        //Vérification de sécurité si l'utilisateur est toujurs connecté => alors on lui affiche le bouton deconnexion
+        if (isset($_SESSION['nouvelsession'])) {
+            $this->affichageMenu = $this->affichageMenu .
                 '<div class="collapse navbar-collapse nav-droite"><ul class="navbar-nav navbar">' .
                 "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=co&action=deconnexion\"><h3>Déconnexion</h3></a></li>";
-                
-                //Verification des droits administrateurs de l'utilisateur afin de lui permettre ou non de passer de l'interface user a l'interface admin
-                if ($admin){
-                    $this->affichageMenu = $this->affichageMenu .
+
+            //Verification des droits administrateurs de l'utilisateur afin de lui permettre ou non de passer de l'interface user a l'interface admin
+            if ($admin) {
+                $this->affichageMenu = $this->affichageMenu .
                     "<li class='active'><a class='nav-brand' href=\"administration/index.php\"><h3>COTE ADMIN</h3></a></li>";
-                }
-                "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=info_perso&action\"><h3>Déconnexion</h3></a></li>".
+            }
+            "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=info_perso&action\"><h3>Déconnexion</h3></a></li>" .
                 $this->affichageMenu = $this->affichageMenu .
                 "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=infoPerso&action&action=info\"><h3>
                     <img id='logo_perso' class'd-inline-block align-top' src='administration/media/imageUtilisateur.png'>
-                </h3></a></li>".
+                </h3></a></li>" .
                 "</ul></div>";
-            
+
 
             //Si l'utilisateur n'est pas connecté => on lui affiche le bouton connexion
-            } else {
-                $this->affichageMenu = $this->affichageMenu .
+        } else {
+            $this->affichageMenu = $this->affichageMenu .
                 '<div class="collapse navbar-collapse nav-droite"><ul class="navbar-nav navbar">' .
-                "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=profil&action=profil\"><h3>Mon Profil</h3></a></li>".
-                "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=co&action=connexion\"><h3>Connexion</h3></a></li>".
-                '<li class="active"><a class="nav-brand" href="index.php?module=co&action=inscription"> <h3>Inscription</h3></a></li>'.
+                "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=co&action=connexion\"><h3>Mon Profil</h3></a></li>" .
+                "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=co&action=connexion\"><h3>Connexion</h3></a></li>" .
+                '<li class="active"><a class="nav-brand" href="index.php?module=co&action=inscription"> <h3>Inscription</h3></a></li>' .
                 "</ul></div>";
-            }
-            
         }
+
     }
+}
 ?>
