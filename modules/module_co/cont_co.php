@@ -79,21 +79,21 @@ class ContCo
                 header("Location: index.php?module=accueil&action=accueil");
                 break;
 
-            case "validerins":
-                if (verifToken()) {
-                    $this->inscription();
-                }
-                supprimerToken();
-                //header("Location: index.php?module=co&action=connexion");
-                break;
-
-            case "deconnexion":
-                $this->deconnexion();
-                header("Location: index.php?module=accueil&action=accueil");
-                break;
+                case "validerins" : 
+                    if(verifToken()){
+                        $this->inscription();
+                    }
+                    supprimerToken();
+                    header("Location: index.php?module=co&action=connexion");
+                    break;
+                
+                case "deconnexion" : 
+                    $this->deconnexion();
+                    header("Location: index.php?module=accueil&action=accueil");
+                    break;
+            }
+            global $affichage;
+            $affichage = $this->vue->getAffichage();
         }
-        global $affichage;
-        $affichage = $this->vue->getAffichage();
     }
-}
 ?>

@@ -104,6 +104,7 @@ class ModeleCo extends Connexion
                     $resultat = $req->execute();
                     $id = $req->fetchColumn();
                     $_SESSION["id"] = $id;
+                    var_dump($_SESSION);
 
                 } catch (Exception $e) {
                     echo "resultat faux";

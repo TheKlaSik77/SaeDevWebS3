@@ -145,7 +145,7 @@ class VueApropos extends VueGenerique
                         </div>
                         <div class="col-md-4 d-flex">
                             <div class="card h-100 w-100">
-
+                    
                                 <img src="images/apropos_tours.png" class="card-img-top" alt="Tours">
                                 <div class="card-body">
                                     <h5 class="card-title">Tours</h5>

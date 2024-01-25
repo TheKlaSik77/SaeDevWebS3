@@ -26,14 +26,18 @@ Initialized Amelia & Yasmine BEN YOUSSEF | Kylian LASIK | Marielle VALLEE -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    
+
+
 
 
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
-        </script>
+    <!-- Inclusion de jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="modules/module_profil/modifier_profil.js"  crossorigin="anonymous"></script>
+
 
 
 </head>

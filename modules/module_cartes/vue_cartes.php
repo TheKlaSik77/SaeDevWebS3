@@ -16,8 +16,9 @@ class VueCarte extends VueGenerique
   public function afficher_cartes($Cartes)
   {
     ?>
-    <style>
-       #presentation {
+   
+   <style>
+      #presentation {
         color: #333;
       }
 
@@ -35,7 +36,6 @@ class VueCarte extends VueGenerique
       .about-section p {
         line-height: 1.6;
       }
-
       #carouselExampleCaptions {
         width: 65%;
         margin: auto;
@@ -52,7 +52,6 @@ class VueCarte extends VueGenerique
 
       }
     </style>
-
 
 <section id="presentation">
       <div class="about-section">
