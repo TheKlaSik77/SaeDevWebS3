@@ -1,6 +1,6 @@
 <?php
 
-class VueTour extends VueGenerique
+class VueEnnemi extends VueGenerique
 {
 
   public function __construct()
@@ -8,7 +8,7 @@ class VueTour extends VueGenerique
     parent::__construct();
   }
 
-  public function afficher_tours($tours)
+  public function afficher_ennemis($ennemi)
   {
     ?>
 
@@ -81,12 +81,11 @@ class VueTour extends VueGenerique
     <section id="presentation">
       <div class="about-section">
         <div class="container">
-          <h2>À Propos des TOURS</h2>
+          <h2>À Propos des Ennemis</h2>
         
         </div>
         <div class="container">
-        <p>Protéger les citoyens des villes sous-terraines contre les attaques incessantes des Splicers avec les tours défensives pour repousser les assauts des Splicers, 
-          qui de plus en plus difficiles à vaincre...
+        <p>les villes sont menacées par des créatures mécaniques appelées "les Splicers". Ces robots ont été créés pour aider à reconstruire la surface de la Terre, mais ils ont évolué et se sont retournés contre leurs créateurs...
           </p>
       </div>
     </section>
@@ -96,20 +95,20 @@ class VueTour extends VueGenerique
     <section class="game-elements-section">
       <div class="container">
         <div class="row">
-          <?php foreach ($tours as $tour): ?>
-            <?php $imagePath = "images/tours_" . $tour['id'] . ".png"; // Corrected the image path ?>
+          <?php foreach ($ennemi as $ennemi): ?>
+            <?php $imagePath = "images/ennemis_" . $ennemi['id'] . ".png"; // Corrected the image path ?>
             <div class="col-md-4 d-flex align-items-stretch">
               <div class="card h-100">
                 <?php if (file_exists($imagePath)): ?>
                   <img src="<?= htmlspecialchars($imagePath) ?>" class="card-img-top img"
-                    alt="<?= htmlspecialchars($tour['nom']) ?>">
+                    alt="<?= htmlspecialchars($ennemi['nom']) ?>">
                 <?php endif; ?>
                 <div class="card-body">
                   <h5 class="card-title">
-                    <?= htmlspecialchars($tour['nom']) ?>
+                    <?= htmlspecialchars($ennemi['nom']) ?>
                   </h5>
                   <p class="card-text">
-                    <?= htmlspecialchars($tour['description']) ?>
+                    <?= htmlspecialchars($ennemi['description']) ?>
                   </p>
                 </div>
                   <div class="row">
@@ -118,26 +117,22 @@ class VueTour extends VueGenerique
                         <thead>
                           <tr>
 
-                            <th scope="col">Coût</th>
-                            <th scope="col">Portée</th>
-                            <th scope="col">Projectiles</th>
-                            <th scope="col">Dégâts</th>
+                            <th scope="col">Pv</th>
+                            <th scope="col">Vitesse</th>
+                            <th scope="col">drop</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
 
                             <td>
-                              <?= htmlspecialchars($tour['cout']) ?>
+                              <?= htmlspecialchars($ennemi['pv']) ?>
                             </td>
                             <td>
-                              <?= htmlspecialchars($tour['portee']) ?>
+                              <?= htmlspecialchars($ennemi['vitesse']) ?>
                             </td>
                             <td>
-                              <?= htmlspecialchars($tour['projectiles']) ?>
-                            </td>
-                            <td>
-                              <?= htmlspecialchars($tour['degats']) ?>
+                              <?= htmlspecialchars($ennemi['drop_ennemi']) ?>
                             </td>
                           </tr>
 

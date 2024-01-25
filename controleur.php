@@ -9,6 +9,7 @@
     include_once('modules/pageClassement/mod_classement.php');
     include_once('modules/module_tours/mod_tours.php');
     include_once('modules/module_cartes/mod_cartes.php');
+    include_once('modules/module_ennemis/mod_ennemis.php');
 
 
 
@@ -62,6 +63,9 @@ class Controleur
             case 'FAQ':
                 new ModFAQ();
                 break;
+                case'ennemis':
+                    new ModEnnemi();
+                    break;
                 
             default:
                 echo 'default';
