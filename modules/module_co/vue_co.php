@@ -67,7 +67,7 @@ class VueCo extends VueGenerique
                             </div>
                             <div class="login-field">
                                 <label for="password">Mot De Passe</label>
-                                <input type="password" class="form-control" id="password" name='password'
+                                <input type="password" class="form-control" id="password" name='mdp'
                                     placeholder="Mot de passe" />
                             </div>
                             <div class="btn-class">
@@ -114,11 +114,9 @@ class VueCo extends VueGenerique
                             </div>
                             <div class="login-field">
                                 <label for="exampleInput2" class="form-label">Adresse Email</label>
-<<<<<<< HEAD
-                                <input type="email" class="form-control" id="exampleInput2" name='mail'
-=======
+
                                 <input type="email" class="form-control" id="mail" name='mail'
->>>>>>> c93a3201f39b90ae71183e2d60cf482dcdf255cc
+
                                     placeholder="Adresse.Mail@exemple.com"
                                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
                             </div>

@@ -47,7 +47,7 @@
             } else {
                 $this->affichageMenu = $this->affichageMenu .
                 '<div class="collapse navbar-collapse nav-droite"><ul class="navbar-nav navbar">' .
-                "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=co&action=connexion\"><h3>Mon Profil</h3></a></li>".
+                "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=profil&action=profil\"><h3>Mon Profil</h3></a></li>".
                 "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=co&action=connexion\"><h3>Connexion</h3></a></li>".
                 '<li class="active"><a class="nav-brand" href="index.php?module=co&action=inscription"> <h3>Inscription</h3></a></li>'.
                 "</ul></div>";
