@@ -1,9 +1,3 @@
-/* Version 1.0 - 2022/12/05 -
-GNU GPL Copyleft 🄯 2022-2032 -
-Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA */
-/* Version 1.0 - 2022/12/05 -
-GNU GPL Copyleft 🄯 2022-2032 -
-Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA */
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
 :root{
@@ -13,18 +7,218 @@ Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA */
     --entreDeux: rgb(133, 138, 74);
 }
 
+/*********************************************
+HTML
+**********************************************/
 html{
     min-height: 100%;
+    
 }
 
+/*********************************************
+BODY
+**********************************************/
 body{
     font-family: 'Metal Mania', cursive;
+    
 
 }
 
+
+
+/*********************************************
+MAIN
+**********************************************
+- couleur de fond
+- taille du fond
+*/
 main{
     background-color: black;
     min-height: 100vh;
+}
+
+
+/*********************************************
+NAVBAR
+**********************************************/
+/* Reset des styles par défaut pour la navbar */
+.navbar {
+    background-color: black; /* Rendre le fond transparent */
+    border: none;
+    box-shadow: none;
+}
+
+.navbar-collapse {
+    background-color: #000;
+}
+
+/* Styles pour les liens de la navbar */
+.navbar a {
+    color: white; /* Couleur des liens */
+    transition: color 0.1s ease; /* Transition douce pour le survol */
+}
+
+/* Styles pour le survol des liens */
+.navbar a:hover {
+    color: #959c54; /* Couleur au survol */
+}
+
+/* Styles spécifiques pour les éléments actifs ou au survol */
+.nav-item.active a,
+.nav-item:hover a {
+    color: #959c54; /* Couleur pour l'élément actif ou au survol */
+}
+
+/* Styles pour ajuster la position des éléments de menu à droite */
+.nav-droite {
+    margin-left: auto;
+}
+
+/* Assurez-vous que la hauteur du nav est suffisante pour les éléments */
+.navbar-expand-sm {
+    height: 50px;
+}
+/* Assurez-vous que la hauteur du nav est suffisante pour les éléments */
+.navbar-expand-sm {
+    height: 50px;
+}
+ .navbar img{
+    height: 10px;
+    margin-bottom: 6px;
+}
+
+
+/*LIENS NAV:
+- taille des h3
+*/
+h3{
+    padding: 0 10px;   
+}
+
+
+
+
+
+
+
+/*********************************************
+Page d'Accueil
+**********************************************/
+#fond{
+    background-image: url('../SaeDevWebS3/images/fond.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 100%; /* Assurez-vous que le container prend toute la largeur */
+    min-height: 100vh; /* Et toute la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#btn {
+    
+    background-color: #959c54; /* Couleur de fond du bouton */
+    border: 1px solid #959c54; /* Couleur de la bordure du bouton */
+    color: #ffffff; /* Couleur du texte du bouton */
+}
+
+#btn:hover, .btn-primary:focus {
+    background-color: #b0b960; /* Couleur de fond du bouton au survol */
+    border-color: #b0b960; /* Couleur de la bordure du bouton au survol */
+}
+
+#btn:active {
+    background-color: #7a7d40; /* Couleur de fond du bouton lorsqu'il est pressé */
+    border-color: #7a7d40; /* Couleur de la bordure du bouton lorsqu'il est pressé */
+}
+
+.acc h2{
+    color:rgb(138, 146, 69);
+    margin-bottom: 5%;
+}
+/*********************************************
+Page de Téléchargement du jeu
+**********************************************/
+
+#download-fond{
+    background-image: url('../SaeDevWebS3/images/fond_download.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 100%; /* Assurez-vous que le container prend toute la largeur */
+    min-height: 100vh; /* Et toute la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#btn_download {
+    background-color: #959c54; /* Couleur de fond du bouton */
+    border: 1px solid #959c54; /* Couleur de la bordure du bouton */
+    color: #ffffff; /* Couleur du texte du bouton */
+}
+
+#btn_download:hover, .btn-primary:focus {
+    background-color: #b0b960; /* Couleur de fond du bouton au survol */
+    border-color: #b0b960; /* Couleur de la bordure du bouton au survol */
+}
+
+#btn_download:active {
+    background-color: #7a7d40; /* Couleur de fond du bouton lorsqu'il est pressé */
+    border-color: #7a7d40; /* Couleur de la bordure du bouton lorsqu'il est pressé */
+}
+
+/*********************************************
+Propriétés communes 
+Page Accueil & Téléchargement
+**********************************************/
+
+.acc{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+    width: 50em;
+    max-height: 45em;
+    text-align: center;
+    
+}
+
+.acc h1{
+    font-size: 80px;
+    color: #ffffff;
+    text-align: center;
+    
+}
+
+.acc a{
+    color: #ffffff;
+}
+
+.acc button {
+    font-size: 24px;
+}
+
+.btn-class{
+    display: flex;
+    justify-content: center; /* Centrer les éléments horizontalement dans le flex container */
+    padding: 1rem;
+}
+
+.btn-primary {
+    background: #959c54; /* Fond du bouton */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+}
+
+.btn-primary:hover {
+    background: #959c54; /* Changement de fond au survol */
 }
 
 
@@ -46,12 +240,11 @@ footer{
     
 }
 
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+  }
 
-
-ul{
-    list-style-type: none;
-    color:#959c54;
-}
 
 .nav-brand{
     text-decoration: none;
@@ -65,33 +258,11 @@ li{
     padding-bottom: 5px;
 }
 
-a:hover{
-    transition: all 0.5s ease;
-    color: rgb(190, 190, 190);
-}
-
-#navPrincipale{
-    color: var(--bleuu);
-    background-color : var(--gris);
-    
-}
-
-.nav-item{
-    vertical-align: baseline;
-}
-
-
-
-.navbar{
-    margin : 0px;
-    padding: 0px;
-}
 
 .nav-droite{
     position: absolute;
     right:0.5em;
 }
-
 
 
 
@@ -115,7 +286,7 @@ a:hover{
 }
 
 #fond_connexion{
-    background-image: url('../SaeDevWebS3/images/fond_connexion.png');
+    background-image: url(images/fond_download.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -126,7 +297,7 @@ a:hover{
 
 
 #fond_inscription{
-    background-image: url('../SaeDevWebS3/images/fond_connexion.png');
+    background-image: url(images/fond_download.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -135,6 +306,7 @@ a:hover{
    
 }
 
+
 .card {
     background: #cecdcd; /* Couleur de fond du formulaire */
     color: #000; /* Couleur du texte */
@@ -142,10 +314,21 @@ a:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre portée pour le relief */
     margin: auto; /* Centrer la carte dans le container */
     padding: 2rem; /* Espacement à l'intérieur de la carte */
-    width: 50%; /* Largeur du formulaire, ajustez selon votre besoin */
+    width: 70%; /* Largeur du formulaire, ajustez selon votre besoin */
     max-width: 600px; /* Largeur maximale du formulaire */
+
 }
 
+.form-control, .form-select {
+    width: 92%; /* ou vous pouvez utiliser une valeur en pixels si vous préférez */
+}
+
+select {
+    border: 1px solid #000; /* Ceci applique une bordure noire */
+    height: 40px; /* Réglez la hauteur pour qu'elle corresponde aux autres champs */
+    font-family: inherit; /* Assurez-vous que la police correspond aux autres champs */
+    font-size: inherit; /* Assurez-vous que la taille de la*/
+}
 .card-header,
 .card-footer {
     background: #cecdcd; /* Fond noir */
@@ -173,30 +356,12 @@ a:hover{
 .login-field input {
     background: #ffffff; /* Fond des champs de saisie */
     border: 1px solid #333; /* Bordure des champs de saisie */
-    color: #fff; /* Texte des champs de saisie */
+    color: #333; /* Texte des champs de saisie */
     padding: 10px;
     width: calc(100% - 22px); /* Ajustement de la largeur */
 }
 
-.btn-class{
-    display: flex;
-    justify-content: center; /* Centrer les éléments horizontalement dans le flex container */
-    padding: 1rem;
-}
 
-.btn-primary {
-    background: #959c54; /* Fond du bouton */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    
-}
-
-
-
-.btn-primary:hover {
-    background: #959c54; /* Changement de fond au survol */
-}
 
 .account-section h5, .account-section p {
     text-align: center;
@@ -205,6 +370,8 @@ a:hover{
 .card-header h4 {
     text-align: center;
 }
+
+
 
 /* ACCUEIL */
 
@@ -240,9 +407,6 @@ a:hover{
     
 }
 
-.acc button {
-    font-size: 24px;
-}
 
 
 #header-info-perso{
@@ -264,30 +428,10 @@ a:hover{
 }
 
 
-/*nava ba*/
 
-.nav-brand{
-    text-decoration: none;
-    
-}
-
-li{
-    margin: 0px;
-    padding-right: 10px;
-    padding-top: 15px;
-    padding-bottom: 5px;
-}
-
-a:hover{
-    transition: all 0.5s ease;
-    color: rgb(190, 190, 190);
-}
-
-#navPrincipale{
-    color: var(--bleuu);
-    background-color : var(--gris);
-    border-bottom: red 2px;
-   
+/* Add this to your CSS file */
+#faq-card p {
+    margin: auto;
 }
 
 .nav-item{
@@ -314,3 +458,237 @@ a:hover{
     right:0.5em;
 }
 
+.question_faq{
+    color: var(--gris);
+}
+
+#div-realisations{
+    display: inline-flex;
+    justify-content: center;    
+}
+
+.fullLarg{
+    width: 90%;
+}
+
+.marg-choix{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+.marg-btn{
+    margin-top: 2.3em;
+}
+
+.lien_rea:link{
+    text-decoration: none;
+}
+
+.titre_rea{
+    color: black;
+}
+
+.info-reserv-logo{
+    width: 1em;
+    height: 1em;
+}
+
+.img-supps{
+    float: inline-end;
+}
+
+.img-modal-reserv{
+    width: 20em;
+    height: 20em;
+    padding: auto;
+}
+
+.description-supp{
+    font-size: large;
+}
+
+.acrd-crp{
+    background-color: var(--noir);
+}
+
+.acrd-hd{
+    background-color: var(--entreDeux);
+}
+
+.accordion-item{
+    color: var(--noir);
+    border: none;
+    border-radius: 0%;
+}
+
+.card{
+    box-shadow: 0px 0px 30px var(--bleuu);
+    color: var(--noir);
+}
+
+.bords{
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    max-width: 1500px;
+}
+
+.pad{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.bg-clr{
+    background-color: var(--noir);
+}
+
+.realisations{
+    width : 16em;
+    border-radius: 5%;
+    transition: 0.2s;
+}
+
+.realisations:hover{
+    transform : scale(1.05);
+}
+
+.align{
+    width: 33%;
+    display: inline-block;
+}
+
+
+/*.profil-container {
+    background: url('chemin_vers_image_de_fond.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    color: #fff; /* ou toute autre couleur de texte */
+}
+
+.profil-header {
+    text-align: center;
+}
+
+.profil-picture {
+    /* Ajoutez des styles pour la photo de profil si nécessaire */
+}
+
+.profil-form {
+    /* Ajoutez des styles pour votre formulaire */
+    background: rgba(0, 0, 0, 0.5); /* fond semi-transparent pour les zones de texte */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.profil-form .form-group {
+    margin-bottom: 20px;
+}
+
+.profil-form .form-group label {
+    display: block;
+}
+
+.profil-form .form-group input,
+.profil-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.profil-actions {
+    text-align: right;
+}
+
+.profil-actions button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Ajoutez des styles supplémentaires pour les boutons et les entrées */
+
+
+/* ACCUEIL */
+/*
+.acc{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+    width: 50em;
+    max-height: 45em;
+}
+
+.imgAccueil{
+    display: absolute;
+    width: 16em;
+    margin:auto;
+    padding: 0.5em;
+    border-radius: 2%;
+    /* filter: blur(1px); 
+}
+
+#imgA2{
+    position: relative;
+    margin-top: 5em;
+}
+
+.text-acc{
+    color : black;
+    border : 5px solid var(--gris);
+    z-index: 1;
+    position: relative;
+    width: 500px;
+    margin:auto;
+    bottom:22em;
+    opacity: 0.7;
+    border-radius: 5%;
+    background-color: var(--gris);
+}
+
+#titre_accueil{
+    padding-top: 100px;
+    color: var(--bleuu);
+    font-weight: bolder;
+    text-align: center;
+    font-family: fantasy;
+}
+
+.carousel-item{
+    height: 40em;
+}
+
+.carousel-inner{
+    padding-top: 3em;
+}
+
+.carousel-caption{
+    left: 55%;
+    bottom: 40%;
+}
+
+.button-acc{
+    box-shadow: 0px 0px 30px var(--bleuu);
+}
+/* INFO PERSO 
+#header-info-perso{
+    display: inline-flex;
+    width:100%;
+}
+
+#titre-mes-reserv{
+    width:auto;
+}
+
+#bouton-modif-mdp{
+    position: absolute;
+    right:1em;
+}
+
+#bouton-mes-reserv{
+    margin-top: 3em;
+}
+*/

@@ -1,8 +1,13 @@
+
 <?php
+
+
+
     session_start();
     
     include_once "connexion.php";
     include_once "controleur.php";
+    
 
     $affichage;
     Connexion::initConnexion();
