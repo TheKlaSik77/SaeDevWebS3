@@ -14,61 +14,7 @@ class VueApropos extends VueGenerique
 
     public function afficher_apropos()
     {
-        /*
-        ?>
-        <!DOCTYPE html>
-        <html lang="fr">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>À Propos - Site de Jeux Vidéo</title>
-            <!-- Bootstrap CSS -->
-    
-            <style>
-                .about-section{
-                    background-color: white;
-                }
-                body {
-                    background-color: #f4f4f4;
-                    color: #333;
-                }
-                .about-section {
-                    padding: 50px;
-                    background: #fff;
-                }
-                .about-section h2 {
-                    font-weight: bold;
-                    margin-bottom: 20px;
-                }
-                .about-section p {
-                    line-height: 1.6;
-                }
-            </style>
-        </head>
-        <body>
-            <div class="about-section">
-                <div class="container">
-                    <h2>À Propos de Notre Site de Jeux Vidéo</h2>
-                    <p>
-                        Bienvenue sur notre site dédié aux passionnés de jeux vidéo. 
-                        Ici, vous trouverez les dernières actualités, critiques, et 
-                        discussions sur vos jeux préférés.
-                    </p>
-                    <p>
-                        Notre équipe est composée de gamers dévoués et expérimentés 
-                        qui partagent leurs opinions et connaissances sur divers 
-                        jeux et plateformes.
-                    </p>
-                </div>
-            </div>
-            <!-- Bootstrap JS and dependencies -->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-            
 
-        </body>
-        </html>
-        <?php
-        */
 ?>
         <!DOCTYPE html>
         <html lang="fr">
@@ -135,6 +81,9 @@ class VueApropos extends VueGenerique
                     background: #fff;
                 }
 
+                .about-section .container p {
+                    padding: 30px;
+                }
                 .game-elements-section .container {
                     background-color:#f4f4f4;
                 }
@@ -153,11 +102,10 @@ class VueApropos extends VueGenerique
         <body>
             <div class="about-section">
                 <div class="container">
-                    <h2>À Propos de Notre Site de Jeux Vidéo</h2>
+                    <h2>À Propos de Notre Site</h2>
                     <p>
-                        Bienvenue sur notre site dédié aux passionnés de jeux vidéo.
-                        Ici, vous trouverez les dernières actualités, critiques, et
-                        discussions sur vos jeux préférés.
+                        Bienvenue sur notre site dédié aux passionnés de Metallic Infestation.
+                        Ici, vous trouverez l'univers du jeu, les élemnts et autre encore...
                     </p>
                 </div>
             </div>
@@ -183,7 +131,7 @@ class VueApropos extends VueGenerique
                                 <div class="card-body">
                                     <h5 class="card-title">Ennemis</h5>
                                     <p class="card-text">Découvrez les différents ennemis du jeu...</p>
-                                    <a href="#" class="btn btn-primary">Explorer</a>
+                                    <a href="index.php?module=ennemis&action=ennemis" class="btn btn-primary">Explorer</a>
                                     <hr>
                                 </div>
                     
@@ -207,7 +155,7 @@ class VueApropos extends VueGenerique
                                 <div class="card-body">
                                     <h5 class="card-title">Cartes</h5>
                                     <p class="card-text">Explorez les paysages épiques du jeu...</p>
-                                    <a href="#" class="btn btn-primary">Explorer</a>
+                                    <a href="index.php?module=cartes&action=cartes" class="btn btn-primary">Explorer</a>
                                     <hr>
                                 </div>
                             </div>
