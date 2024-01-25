@@ -1,81 +1,160 @@
-<!-- Version 1.0 - 2022/12/05 -
-GNU GPL Copyleft 🄯 2022-2032 -
-Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
-
 <?php
 
-    include_once('connexion.php');
+include_once('connexion.php');
 
-    class ModeleCo extends Connexion{
-    
-        public function __construct(){
+class ModeleCo extends Connexion
+{
+
+    public function __construct()
+    {
+    }
+    public function inscription()
+    {
+        if (
+            isset($_POST['login'], $_POST['password'], $_POST['mail']) &&
+            !empty($_POST['login']) && !empty($_POST['password']) &&
+            !empty($_POST['mail'])
+        ) {
+            try {
+
+                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+                $req = self::$bdd->prepare("INSERT INTO Utilisateur (login, mdp, mail, pays) VALUES (:log, :mdp, :mail, :pays)");
+                $req->bindValue(':log', $_POST['login']);
+                $req->bindValue(':mdp', $password);
+                $req->bindValue(':mail', $_POST['mail']);
+                $req->bindValue(':pays', $_POST['pays']);
+                $result = $req->execute();
+
+                if ($result === false) {
+                   return -2;
+                }
+
+            } catch (Exception $e) {
+                echo "resultat faux";
+            }
+
+        } else {
+            return -3;
         }
+    }
 
-        public function inscription(){
-            if(isset($_POST['login']) && isset($_POST['mdp'])  && isset($_POST['mail']) && !empty($_POST['login']) && !empty($_POST['mdp'])  && !empty($_POST['mail'])){
-                $hashedPassword = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
-                $oui = array($_POST['login'], $hashedPassword, $_POST['mail']); 
+
+    public function get_utilisateur($login)
+    {
         try {
-            $req = self::$bdd->prepare("INSERT INTO utilisateur (login, mdp, mail) VALUES (?, ?, ?)");
-            $req->execute($oui);
-            return ($_POST['login']);
-        } catch (PDOException $e) {
-            // Gérer l'erreur ici
-            echo "Erreur lors de l'insertion : " . $e->getMessage();
+            $req = self::$bdd->prepare("SELECT * from utilisateur WHERE login=?");
+            $resultat = $req->execute([$login]);
+
+            if ($resultat == false) {
+                echo "FALSE";
+            }
+            return $req->fetch();
+        } catch (Exception $e) {
+            echo "resultat faux";
         }
+    }
+
+
+
+    public function verifLogin()
+    {
+        try {
+            $req = self::$bdd->prepare("SELECT * from Utilisateur WHERE login=:log");
+            echo $_POST['login'];
+            $req->bindValue(':log',$_POST['login']);
+            $resultat = $req->execute();
+
+            if ($resultat == false) {
+                echo "FALSE";
+            }
+            else{
+                echo "true";
+
+            }
+           
+            return $resultat;
+        } catch (Exception $e) {
+            echo "resultat faux";
+        }
+    }
+
+    public function verifMdp()
+    {
+        try {
+            $req = self::$bdd->prepare("SELECT mdp from Utilisateur WHERE login=:log");
+            echo $_POST['login'];
+            $req->bindValue(':log',$_POST['login']);
+            $resultat = $req->execute();
+            $password = $req->fetchColumn();
+            if ($resultat == false) {
+                echo "FALSE";
+            }
+            else{
+                echo "OK";
+                return (password_verify($_POST['mdp'],$password));
+            }
+
+        } catch (Exception $e) {
+            echo "resultat faux";
+        }
+    }
+
+    public function connexion()
+    {
+        if (!isset($_SESSION["nouvelsession"])) {
+            echo "dedans";
+            echo "<br>";
+            var_dump($this->verifLogin());
+            echo "<br>";
+            var_dump($this->verifMdp());
+            echo "<br>";
+
+            if($this->verifLogin() && $this->verifMdp()){
+                $_SESSION["nouvelsession"] = 0;
+
+                try {
+                    $req = self::$bdd->prepare("SELECT id from Utilisateur WHERE login=:log");
+                    echo $_POST['login'];
+                    $req->bindValue(':log',$_POST['login']);
+                    $resultat = $req->execute();
+                    $id = $req->fetchColumn();
+                    echo $id;
+                    $_SESSION["id"] = $id;
+
+                    if ($resultat == false) {
+                        echo "FALSE";
+                    }
+                    else{
+                        echo "OK";
+                    }
+        
+                } catch (Exception $e) {
+                    echo "resultat faux";
+                }
+
+                // Connexion en tant qu'admin
+                /*$requete = self::$bdd->prepare('SELECT admin FROM roles JOIN Utilisateur ON(roles.id_utilisateur = utilisateurs.id) WHERE login =  ?');
+                $requete->execute(array($_POST['login']));
+                $t = $requete->fetch();
+                if ($t[0] == true) {
+                    return 2;
+                } else {
+                    return 1;
+                }*/
+                
+            } else {
+                die("mauvais mot de passe ou nom d'utilisateurs");
+            }
+        } else {
+            return -1;
+        }
+    }
+
+    public function deconnexion()
+    {
+        unset($_SESSION["nouvelsession"]);
     }
 
 }
-        
-        public function verifLogin($login){
-            $req = self::$bdd->prepare('SELECT * FROM utilisateur WHERE login =  ?');
-            $req->execute(array($login));
-            $tab = $req->fetchAll();
-            if (!empty($tab)){
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        public function verifMdp($login, $mdp){
-            $req = self::$bdd->prepare('SELECT password FROM utilisateur WHERE login =  ?');
-            $req->execute(array($login));
-            $tab = $req->fetch();
-            return (password_verify($mdp,$tab['mdp']));
-        }
-
-        public function connexion(){
-            if (!isset($_SESSION["nouvelsession"])){
-                if ($this->verifLogin($_POST['login']) && $this->verifMdp($_POST['login'], $_POST['mdp'])){
-                    $_SESSION["nouvelsession"] = 0;
-                    $req = self::$bdd->prepare('SELECT id FROM utilisateur WHERE login =  ?');
-                    $req->execute(array($_POST['login']));
-                    $tab = $req->fetch();
-                    $_SESSION["id"] = $tab[0];
-
-                    // Connexion en tant qu'admin
-                    $requete = self::$bdd->prepare('SELECT admin FROM roles JOIN utilisateur ON(roles.id_utilisateur = utilisateurs.id) WHERE login =  ?');
-                    $requete->execute(array($_POST['login']));
-                    $t = $requete->fetch();
-                    if ($t[0] == true){
-                        return 2;
-                    }
-                    
-                    else {
-                        return 1;
-                    }
-                } else {
-                    die("mauvais mot de passe ou nom d'utilisateurs");
-                }
-            } else {
-                return -1;
-            }
-        }
-
-        public function deconnexion(){
-            unset($_SESSION["nouvelsession"]);
-        }
-    
-    }
 ?>

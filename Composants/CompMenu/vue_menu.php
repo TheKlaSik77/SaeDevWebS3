@@ -21,7 +21,7 @@
             <li class="active"><a class="nav-brand" href="index.php?module=tours&action=tours"> <h3>Tours</h3></a></li>
             <li class="active"><a class="nav-brand" href="index.php?module=ennemis&action=ennemis"> <h3>Ennemis</h3></a></li>
             <li class="active"><a class="nav-brand" href="index.php?module=cartes&action=cartes"> <h3>Cartes</h3></a></li>
-            <li class="active"><a class="nav-brand" href="index.php?module=classement&action=classement"> <h3>Classement</h3></a></li>
+            <li class="active"><a class="nav-brand" href="index.php?module=classement&action=classement&action=mondial"> <h3>Classement</h3></a></li>
             <li class="active"><a class="nav-brand" href="index.php?module=FAQ"> <h3>FAQ</h3></a></li></ul></div>';
 
             //Vérification de sécurité si l'utilisateur est toujurs connecté => alors on lui affiche le bouton deconnexion

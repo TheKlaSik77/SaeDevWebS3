@@ -63,9 +63,7 @@ class VueClassement extends VueGenerique
                                 <?php echo $index + 1; ?>
                             </th>
                             <td>
-                                <a href="index.php?module=classement&action=login">
                                     <?php echo $login; ?>
-                                </a>
                             </td>
                             <td>
                                 <?php echo $data['nbTourelles']; ?>
@@ -166,6 +164,14 @@ class VueClassement extends VueGenerique
         </div>
 
         <?php
+    }
+
+    public function pasDePartie(){
+        ?> <div class="alert alert-info" role="alert">
+            Aucune partie enregistrée ! 
+        </div>
+        <?php      
+
     }
 }
 ?>
