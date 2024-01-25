@@ -1,14 +1,18 @@
-
 <?php
 
-    include_once("cont_apropos.php");
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
 
-    class  ModApropos {
-        public function __construct(){
-            $controleur = new ContApropos();
-            $controleur->exec();
-        }
+include_once("cont_apropos.php");
+
+class ModApropos
+{
+    public function __construct()
+    {
+        $controleur = new ContApropos();
+        $controleur->exec();
     }
+}
 
-    
 ?>

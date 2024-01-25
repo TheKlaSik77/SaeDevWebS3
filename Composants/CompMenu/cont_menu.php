@@ -1,20 +1,28 @@
 <?php
-    include_once "modele_menu.php";
-    include_once "vue_menu.php";
 
-    class ContMenu {
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
 
-        private $vue;
-        private $modele;
+include_once "modele_menu.php";
+include_once "vue_menu.php";
 
-        public function __construct () {
-            $this->vue = new VueMenu();
-            $this->modele = new ModeleMenu();
-        }
+class ContMenu
+{
 
-        public function exec() {
-            $this->vue->menu($this->modele->est_admin());
-            $this->vue->affiche();
-        }
+    private $vue;
+    private $modele;
+
+    public function __construct()
+    {
+        $this->vue = new VueMenu();
+        $this->modele = new ModeleMenu();
     }
+
+    public function exec()
+    {
+        $this->vue->menu($this->modele->est_admin());
+        $this->vue->affiche();
+    }
+}
 ?>

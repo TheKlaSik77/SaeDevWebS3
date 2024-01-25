@@ -1,14 +1,20 @@
 <?php
 
-    include_once("cont_classement.php");
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
 
-    class ModClassement{
-        public function __construct(){
-            
-            $controleur = new ContClassement();
+include_once("cont_classement.php");
 
-            $controleur->exec();
+class ModClassement
+{
+    public function __construct()
+    {
 
-        }
+        $controleur = new ContClassement();
+
+        $controleur->exec();
+
     }
+}
 ?>

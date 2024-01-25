@@ -1,12 +1,18 @@
 <?php
 
-    include_once("cont_cartes.php");
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
 
-    class ModCarte {
-        public function __construct(){
-            $controleur = new ContCarte();
-            $controleur->exec(); 
-        }
+include_once("cont_cartes.php");
+
+class ModCarte
+{
+    public function __construct()
+    {
+        $controleur = new ContCarte();
+        $controleur->exec();
     }
-    
+}
+
 ?>

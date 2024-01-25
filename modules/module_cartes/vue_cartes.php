@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('MY_APP')) {
+  die("Accès interdit");
+}
+
 class VueCarte extends VueGenerique
 {
   public function __construct()
@@ -12,8 +17,6 @@ class VueCarte extends VueGenerique
   {
     ?>
     <style>
-
-
       /* Ajoutez vos styles CSS ici */
 
       #carouselExampleCaptions {
@@ -38,19 +41,23 @@ class VueCarte extends VueGenerique
     <div id="carouselExampleCaptions" class="carousel slide">
       <div class="carousel-indicators">
         <?php foreach ($Cartes as $index => $carte): ?>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?= $index ?>" 
-                  class="<?= $index === 0 ? 'active' : '' ?>" 
-                  aria-current="<?= $index === 0 ? 'true' : '' ?>" 
-                  aria-label="Slide <?= $index + 1 ?>"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?= $index ?>"
+            class="<?= $index === 0 ? 'active' : '' ?>" aria-current="<?= $index === 0 ? 'true' : '' ?>"
+            aria-label="Slide <?= $index + 1 ?>"></button>
         <?php endforeach; ?>
       </div>
       <div class="carousel-inner">
         <?php foreach ($Cartes as $index => $carte): ?>
           <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-            <img src="images/carte_<?= $carte['id'] ?>.png" class="d-block w-100" alt="<?= htmlspecialchars($carte['nom']) ?>">
+            <img src="images/carte_<?= $carte['id'] ?>.png" class="d-block w-100"
+              alt="<?= htmlspecialchars($carte['nom']) ?>">
             <div class="carousel-caption d-none d-md-block">
-              <h5><?= htmlspecialchars($carte['nom']) ?></h5>
-              <p><?= htmlspecialchars($carte['description']) ?></p>
+              <h5>
+                <?= htmlspecialchars($carte['nom']) ?>
+              </h5>
+              <p>
+                <?= htmlspecialchars($carte['description']) ?>
+              </p>
             </div>
           </div>
         <?php endforeach; ?>
