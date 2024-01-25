@@ -17,34 +17,11 @@ class VueCarte extends VueGenerique
   {
     ?>
     <style>
-<<<<<<< HEAD
-      #presentation {
-        color: #333;
-      }
-
-
-      .about-section {
-        padding: 40px;
-        background: #fff;
-      }
-
-      .about-section h2 {
-        font-weight: bold;
-        margin-bottom: 20px;
-      }
-
-      .about-section p {
-        padding-left: 30px;
-        line-height: 1.6;
-      }
-=======
       /* Ajoutez vos styles CSS ici */
->>>>>>> 63d63c1517b3254d18aa44883e89788df896623e
 
       #carouselExampleCaptions {
         width: 65%;
         margin: auto;
-        padding-bottom: 30px;
       }
 
       #carouselExampleCaptions p {
@@ -60,13 +37,6 @@ class VueCarte extends VueGenerique
     </style>
 
 
-    <section id="presentation">
-      <div class="about-section">
-        <div class="container">
-          <h2>Les Cartes</h2>
-          <p>Voici un apperçu des maps:
-          </p>
-        </div>
     </section>
     <div id="carouselExampleCaptions" class="carousel slide">
       <div class="carousel-indicators">

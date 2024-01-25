@@ -14,6 +14,7 @@ class VueTour extends VueGenerique
 
     <style>
       #presentation {
+        background-color: #f4f4f4;
         color: #333;
       }
 
@@ -68,26 +69,29 @@ class VueTour extends VueGenerique
       }
 
       .game-elements-section .container {
-        
+        background-color: #f4f4f4;
       }
 
       .row table{
         background-color: #D3D3D3;
       }
-
-  
     </style>
 
     <section id="presentation">
       <div class="about-section">
         <div class="container">
-          <h2>À Propos des TOURS</h2>
-        
-        </div>
-        <div class="container">
-        <p>Protéger les citoyens des villes sous-terraines contre les attaques incessantes des Splicers avec les tours défensives pour repousser les assauts des Splicers, 
-          qui de plus en plus difficiles à vaincre...
+          <h2>À Propos de Notre Site de Jeux Vidéo</h2>
+          <p>
+            Bienvenue sur notre site dédié aux passionnés de jeux vidéo.
+            Ici, vous trouverez les dernières actualités, critiques, et
+            discussions sur vos jeux préférés.
           </p>
+          <p>
+            Notre équipe est composée de gamers dévoués et expérimentés
+            qui partagent leurs opinions et connaissances sur divers
+            jeux et plateformes.
+          </p>
+        </div>
       </div>
     </section>
     <!-- Bootstrap JS and dependencies -->
@@ -97,7 +101,7 @@ class VueTour extends VueGenerique
       <div class="container">
         <div class="row">
           <?php foreach ($tours as $tour): ?>
-            <?php $imagePath = "images/tours_" . $tour['id'] . ".png"; // Corrected the image path ?>
+            <?php $imagePath = "images/toure_" . $tour['id'] . ".png"; // Corrected the image path ?>
             <div class="col-md-4 d-flex align-items-stretch">
               <div class="card h-100">
                 <?php if (file_exists($imagePath)): ?>

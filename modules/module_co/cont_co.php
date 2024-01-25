@@ -6,6 +6,7 @@ if (!defined('MY_APP')) {
 include_once "csrf.php";
 class ContCo
 {
+
     private $vue;
     private $modele;
     private $action;
