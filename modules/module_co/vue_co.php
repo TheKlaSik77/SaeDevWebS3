@@ -6,6 +6,30 @@ class VueCo extends VueGenerique
     {
         parent::__construct();
     }
+
+     //return -3
+     public function EchecInscription3(){
+        ?> <div class="alert alert-info" role="alert">
+            Tous les champs sont requis !
+        </div>
+        <?php      
+    }
+
+    //return -2
+    public function EchecInscription2(){
+        ?> <div class="alert alert-info" role="alert">
+            Echec lors de l'inscription : les informations fournies n'ont pas pu être intégrées ! 
+        </div>
+        <?php      
+    }
+
+    //return -1
+    public function EchecInscription1(){
+        ?> <div class="alert alert-info" role="alert">
+            Echec lors de l'inscription : ce pseudo est déjà utilisé ! 
+        </div>
+        <?php      
+    }
     public function confirm_inscription($login) {
         ?>
             Inscription de <?=$login?> réussie !
@@ -43,11 +67,10 @@ class VueCo extends VueGenerique
     public function form_connexion()
     {
         ?>
-    
 
         <div class="container py-5" id="fond_connexion">
             <div class="card">
-                <form action='index.php?module=co&action=validerco' method='post'>
+                <form action='index.php?module=co&action=validerco' method='POST'>
                     <input type="hidden" id="exampleInput1" name="token" value="<?php echo $_SESSION['token'] ?>" required>
                     <!-- header -->
 
@@ -67,7 +90,7 @@ class VueCo extends VueGenerique
                             </div>
                             <div class="login-field">
                                 <label for="password">Mot De Passe</label>
-                                <input type="password" class="form-control" id="password" name='password'
+                                <input type="password" class="form-control" id="mdp" name='mdp'
                                     placeholder="Mot de passe" />
                             </div>
                             <div class="btn-class">
@@ -78,9 +101,7 @@ class VueCo extends VueGenerique
                         </div>
 
                         <!-- footer -->
-
-
-
+                        
                 </form>
             </div>
         </div>
@@ -94,7 +115,7 @@ class VueCo extends VueGenerique
         <div class="container py-5" id="fond_inscription">
             <div class="card">
 
-                <form action='index.php?module=co&action=validerins' method='post'>
+                <form action='index.php?module=co&action=validerins' method='POST'>
                     <input type="hidden" id="exampleInput1" name="token" value="<?php echo $_SESSION['token'] ?>" required>
                     <!-- header -->
                     <h4 class="mb-0 ">Inscription</h4>
@@ -109,16 +130,12 @@ class VueCo extends VueGenerique
                             </div>
                             <div class="login-field">
                                 <label for="password">Mot De Passe</label>
-                                <input type="password" class="form-control" id="password" name='mdp'
+                                <input type="password" class="form-control" id="password" name='password'
                                     placeholder="Mot de passe" />
                             </div>
                             <div class="login-field">
                                 <label for="exampleInput2" class="form-label">Adresse Email</label>
-<<<<<<< HEAD
-                                <input type="email" class="form-control" id="exampleInput2" name='mail'
-=======
                                 <input type="email" class="form-control" id="mail" name='mail'
->>>>>>> c93a3201f39b90ae71183e2d60cf482dcdf255cc
                                     placeholder="Adresse.Mail@exemple.com"
                                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
                             </div>

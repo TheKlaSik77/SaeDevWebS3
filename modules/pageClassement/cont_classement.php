@@ -13,29 +13,36 @@
            
             $this->vue = new VueClassement();
             $this->modele = new ModeleClassement();
-            $this->action = isset($_GET['action']) ? $_GET['action'] : "mondial";
+            $this->action = isset($_GET['action']) ? $_GET['action'] : 'mondial';
         }
 
         public function getAction(){
             return $this->action;
         }
 
+        public function getStatsUtilisateur($joueur){
+            if($joueur != 0){
+                $this->vue->afficherStatistiquesJoueur($joueur);
+                }
+                else{
+                    $this->vue->pasDePartie();
+                }
+        }
+
         public function exec(){
 
             $this->vue->menu();
 
-            switch ($this->getAction()) {
+            switch ($_GET['action']) {
 
-                case "mondial" : 
+                case 'mondial' : 
                    $mondial = $this->modele->ClassementGlobal();
                    $this->vue->afficherClassementGlobal($mondial);
                     break;
 
-                case "joueur":
+                case 'joueur':
                     $joueur = $this->modele->StatistiquesUtilisateur();
-                    if($joueur != 0){
-                    $this->vue->afficherStatistiquesJoueur($joueur);
-                    }
+                    $this->getStatsUtilisateur($joueur);
                     break;
                 case "login":
                     //echo $_GET["login"];
