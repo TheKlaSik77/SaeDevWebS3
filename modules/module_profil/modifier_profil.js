@@ -10,7 +10,7 @@ $(document).ready(function() {
         };
 
         $.ajax({
-            url: 'http://localhost/~abenyoussef/SaeDevWebS3/modules/module_profil/modifier_profil.php', // Remplacez par le chemin correct
+            url: '../SaeDevWebS3/modules/module_profil/modifier_profil.php', // Remplacez par le chemin correct
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(formData),
