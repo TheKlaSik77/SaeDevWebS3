@@ -1,19 +1,27 @@
 <?php
-    class VueGenerique{
 
-        protected $vueTot;
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
+class VueGenerique
+{
 
-        public function __construct(){
-            ob_start();
-        }
+    protected $vueTot;
 
-        public function getAffichage(){
-            return ob_get_clean();
-        }
-
-        public function affichage(){
-            global $affichage;
-            $affichage = $this->getAffichage();
-        }
+    public function __construct()
+    {
+        ob_start();
     }
+
+    public function getAffichage()
+    {
+        return ob_get_clean();
+    }
+
+    public function affichage()
+    {
+        global $affichage;
+        $affichage = $this->getAffichage();
+    }
+}
 ?>

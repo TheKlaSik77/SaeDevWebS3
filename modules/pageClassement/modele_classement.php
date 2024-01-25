@@ -1,4 +1,7 @@
 <?php
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
 include_once('connexion.php');
 
 class ModeleClassement extends Connexion
@@ -58,8 +61,9 @@ class ModeleClassement extends Connexion
 
     }
 
-    public function StatistiquesLogin(){
-        
+    public function StatistiquesLogin()
+    {
+
     }
 }
 ?>

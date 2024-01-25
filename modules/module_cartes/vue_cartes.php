@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('MY_APP')) {
+  die("Accès interdit");
+}
+
 class VueCarte extends VueGenerique
 {
   public function __construct()
@@ -12,6 +17,7 @@ class VueCarte extends VueGenerique
   {
     ?>
     <style>
+<<<<<<< HEAD
       #presentation {
         color: #333;
       }
@@ -31,6 +37,9 @@ class VueCarte extends VueGenerique
         padding-left: 30px;
         line-height: 1.6;
       }
+=======
+      /* Ajoutez vos styles CSS ici */
+>>>>>>> 63d63c1517b3254d18aa44883e89788df896623e
 
       #carouselExampleCaptions {
         width: 65%;

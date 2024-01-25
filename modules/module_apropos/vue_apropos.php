@@ -1,8 +1,8 @@
-<!-- Version 1.0 - 2022/12/05 -
-GNU GPL Copyleft 🄯 2022-2032 -
-Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
-
 <?php
+
+if (!defined('MY_APP')) {
+    die("Accès interdit");
+}
 
 class VueApropos extends VueGenerique
 {
@@ -15,7 +15,15 @@ class VueApropos extends VueGenerique
     public function afficher_apropos()
     {
 
+<<<<<<< HEAD
 ?>
+=======
+        </body>
+        </html>
+        <?php
+        */
+        ?>
+>>>>>>> 63d63c1517b3254d18aa44883e89788df896623e
         <!DOCTYPE html>
         <html lang="fr">
 
@@ -85,7 +93,7 @@ class VueApropos extends VueGenerique
                     padding: 30px;
                 }
                 .game-elements-section .container {
-                    background-color:#f4f4f4;
+                    background-color: #f4f4f4;
                 }
 
                 .play-button {
@@ -95,7 +103,6 @@ class VueApropos extends VueGenerique
                 .card {
                     margin: 20px;
                 }
-             
             </style>
         </head>
 
@@ -122,7 +129,7 @@ class VueApropos extends VueGenerique
 
             <div class="game-elements-section">
                 <hr>
-                <div class="container"> 
+                <div class="container">
                     <h2>Explorez les Éléments du Jeu</h2>
                     <div class="row">
                         <div class="col-md-4 d-flex">
@@ -134,12 +141,12 @@ class VueApropos extends VueGenerique
                                     <a href="index.php?module=ennemis&action=ennemis" class="btn btn-primary">Explorer</a>
                                     <hr>
                                 </div>
-                    
+
                             </div>
                         </div>
                         <div class="col-md-4 d-flex">
                             <div class="card h-100 w-100">
-                    
+
                                 <img src="images/towers.png" class="card-img-top" alt="Tours">
                                 <div class="card-body">
                                     <h5 class="card-title">Tours</h5>
@@ -171,7 +178,7 @@ class VueApropos extends VueGenerique
         </body>
 
         </html>
-<?php
+        <?php
     }
 }
 ?>
