@@ -78,7 +78,7 @@
                         $this->inscription();
                     }
                     supprimerToken();
-                    //header("Location: index.php?module=co&action=connexion");
+                    header("Location: index.php?module=co&action=connexion");
                     break;
                 
                 case "deconnexion" : 

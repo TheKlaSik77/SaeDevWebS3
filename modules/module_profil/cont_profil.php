@@ -13,13 +13,16 @@
             $this->modele = new ModeleProfil();
         }
 
-        public function profil(){
-            $infos_profil = $this->modele->get_infos_profil();
+        public function profil($idUser){
+            $idUser = $_SESSION["id"];
+            $infos_profil = $this->modele->get_infos_profil($idUser);
             $this->vue->afficher_profil($infos_profil);
         }
 
+        
+
         public function exec(){
-            $this->profil();
+            $this->profil($_SESSION["id"]);
             global $affichage;
             $affichage = $this->vue->getAffichage();
         }
