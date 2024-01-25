@@ -127,7 +127,7 @@ class VueApropos extends VueGenerique
                     <div class="row">
                         <div class="col-md-4 d-flex">
                             <div class="card h-100 w-100">
-                                <img src="images/ennemis.png" class="card-img-top" alt="Ennemis">
+                                <img src="images/apropos_ennemis.png" class="card-img-top" alt="Ennemis">
                                 <div class="card-body">
                                     <h5 class="card-title">Ennemis</h5>
                                     <p class="card-text">Découvrez les différents ennemis du jeu...</p>
@@ -140,7 +140,7 @@ class VueApropos extends VueGenerique
                         <div class="col-md-4 d-flex">
                             <div class="card h-100 w-100">
                     
-                                <img src="images/towers.png" class="card-img-top" alt="Tours">
+                                <img src="images/apropos_tours.png" class="card-img-top" alt="Tours">
                                 <div class="card-body">
                                     <h5 class="card-title">Tours</h5>
                                     <p class="card-text">Apprenez tout sur les tours défensives du jeu...</p>
@@ -151,7 +151,7 @@ class VueApropos extends VueGenerique
                         </div>
                         <div class="col-md-4 d-flex">
                             <div class="card h-100 w-100">
-                                <img src="images/maps.png" class="card-img-top" alt="Cartes">
+                                <img src="images/apropos_cartes.png" class="card-img-top" alt="Cartes">
                                 <div class="card-body">
                                     <h5 class="card-title">Cartes</h5>
                                     <p class="card-text">Explorez les paysages épiques du jeu...</p>
