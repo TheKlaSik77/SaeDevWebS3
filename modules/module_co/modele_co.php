@@ -114,13 +114,14 @@ class ModeleCo extends Connexion
                 $_SESSION["nouvelsession"] = 0;
 
                 try {
-                    $req = self::$bdd->prepare("SELECT id from Utilisateur WHERE login=:log");
+                    $req = self::$bdd->prepare("SELECT idUser from Utilisateur WHERE login=:log");
                     echo $_POST['login'];
                     $req->bindValue(':log',$_POST['login']);
                     $resultat = $req->execute();
                     $id = $req->fetchColumn();
                     echo $id;
                     $_SESSION["id"] = $id;
+                    var_dump($_SESSION);
 
                     if ($resultat == false) {
                         echo "FALSE";

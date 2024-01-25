@@ -1,6 +1,6 @@
 <?php
 
-    class Connexion{
+    class ConnexionAjax{
 
         protected static $bdd;
 
