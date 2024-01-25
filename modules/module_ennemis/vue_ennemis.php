@@ -13,7 +13,7 @@ class VueEnnemi extends VueGenerique
     ?>
 
     <style>
-      #presentation {
+       #presentation {
         color: #333;
       }
 
@@ -77,15 +77,14 @@ class VueEnnemi extends VueGenerique
 
   
     </style>
-
-    <section id="presentation">
+<section id="presentation">
       <div class="about-section">
         <div class="container">
           <h2>À Propos des Ennemis</h2>
         
         </div>
         <div class="container">
-        <p>les villes sont menacées par des créatures mécaniques appelées "les Splicers". Ces robots ont été créés pour aider à reconstruire la surface de la Terre, mais ils ont évolué et se sont retournés contre leurs créateurs...
+        <p>Des créatures mécaniques appelées "les Splicers". Ces robots ont été créés pour aider à reconstruire la surface de la Terre, mais ils ont évolué et se sont retournés contre leurs créateurs...
           </p>
       </div>
     </section>

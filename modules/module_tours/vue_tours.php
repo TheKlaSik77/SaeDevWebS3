@@ -81,7 +81,7 @@ class VueTour extends VueGenerique
     <section id="presentation">
       <div class="about-section">
         <div class="container">
-          <h2>À Propos des TOURS</h2>
+          <h2>À Propos des Tours</h2>
         
         </div>
         <div class="container">

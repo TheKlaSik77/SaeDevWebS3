@@ -24,8 +24,6 @@ body{
 
 }
 
-
-
 /*********************************************
 MAIN
 **********************************************
@@ -94,9 +92,6 @@ NAVBAR
 h3{
     padding: 0 10px;   
 }
-
-
-
 
 
 
@@ -223,7 +218,9 @@ Page Accueil & Téléchargement
 
 
 
-/*CONNEXION*/
+/*********************************************
+CONNEXION
+**********************************************/
 
 h4{
     text-align: center;
@@ -373,7 +370,9 @@ select {
 
 
 
-/* ACCUEIL */
+/*********************************************
+ACCUEIL
+**********************************************/
 
 
 #fond{
@@ -557,13 +556,6 @@ select {
 }
 
 
-/*.profil-container {
-    background: url('chemin_vers_image_de_fond.jpg') no-repeat center center;
-    background-size: cover;
-    padding: 20px;
-    color: #fff; /* ou toute autre couleur de texte */
-}
-
 .profil-header {
     text-align: center;
 }
@@ -573,7 +565,6 @@ select {
 }
 
 .profil-form {
-    /* Ajoutez des styles pour votre formulaire */
     background: rgba(0, 0, 0, 0.5); /* fond semi-transparent pour les zones de texte */
     padding: 20px;
     border-radius: 10px;
@@ -608,87 +599,3 @@ select {
     border-radius: 5px;
     cursor: pointer;
 }
-
-/* Ajoutez des styles supplémentaires pour les boutons et les entrées */
-
-
-/* ACCUEIL */
-/*
-.acc{
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0%;
-    width: 50em;
-    max-height: 45em;
-}
-
-.imgAccueil{
-    display: absolute;
-    width: 16em;
-    margin:auto;
-    padding: 0.5em;
-    border-radius: 2%;
-    /* filter: blur(1px); 
-}
-
-#imgA2{
-    position: relative;
-    margin-top: 5em;
-}
-
-.text-acc{
-    color : black;
-    border : 5px solid var(--gris);
-    z-index: 1;
-    position: relative;
-    width: 500px;
-    margin:auto;
-    bottom:22em;
-    opacity: 0.7;
-    border-radius: 5%;
-    background-color: var(--gris);
-}
-
-#titre_accueil{
-    padding-top: 100px;
-    color: var(--bleuu);
-    font-weight: bolder;
-    text-align: center;
-    font-family: fantasy;
-}
-
-.carousel-item{
-    height: 40em;
-}
-
-.carousel-inner{
-    padding-top: 3em;
-}
-
-.carousel-caption{
-    left: 55%;
-    bottom: 40%;
-}
-
-.button-acc{
-    box-shadow: 0px 0px 30px var(--bleuu);
-}
-/* INFO PERSO 
-#header-info-perso{
-    display: inline-flex;
-    width:100%;
-}
-
-#titre-mes-reserv{
-    width:auto;
-}
-
-#bouton-modif-mdp{
-    position: absolute;
-    right:1em;
-}
-
-#bouton-mes-reserv{
-    margin-top: 3em;
-}
-*/
