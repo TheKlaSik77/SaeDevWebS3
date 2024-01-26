@@ -11,7 +11,7 @@
         }
 
         //La méthode charge des blocs d'html dans la variable affichageMenu
-        public function menu(){
+        public function menu($estAdmin=false){
 
             
 
@@ -33,7 +33,7 @@
                 "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=profil&action=profil\"><h3>Mon Profil</h3></a></li>".
                 "<li class='active'><a class='nav-brand codeco' href=\"index.php?module=co&action=deconnexion\"><h3>Déconnexion</h3></a></li>";
                 //Verification des droits administrateurs de l'utilisateur afin de lui permettre ou non de passer de l'interface user a l'interface admin
-                if ($_SESSION["admin"]==1){
+                if ($estAdmin){
                     $this->affichageMenu = $this->affichageMenu .  
                     '<li class="active"><a class="nav-brand" href="index.php?module=admin"> <h3>ADMIN</h3></a></li></ul></div>'; 
                 }

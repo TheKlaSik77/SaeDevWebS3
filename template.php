@@ -11,8 +11,12 @@ Initialized Amelia & Yasmine BEN YOUSSEF | Kylian LASIK | Marielle VALLEE -->
     <title>Metallic Infestation</title>
 
     <!-- Les liens -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="administration/media/logo.ico">
+
+
+    <!-- Inclusion de jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
  
@@ -26,20 +30,12 @@ Initialized Amelia & Yasmine BEN YOUSSEF | Kylian LASIK | Marielle VALLEE -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
-    
-
-
-
-
     <link rel="stylesheet" href="style.css">
 
-    <!-- Inclusion de jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script src="modules/module_profil/modifier_profil.js"  crossorigin="anonymous"></script>
-<script src="modules/module_admin/supprimer_joueur.js"  crossorigin="anonymous"></script>
-
-
+    
+    <script src="modules/module_profil/modifier_profil.js"  crossorigin="anonymous"></script>
+    <script src="modules/module_admin/supprimer_joueur.js"  crossorigin="anonymous"></script>
+ 
 </head>
 
 <body>

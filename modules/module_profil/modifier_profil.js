@@ -1,3 +1,17 @@
+function showAlert(message, type, placeholderSelector) {
+    console.log("Showing alert:", message, type, placeholderSelector); // Ajoutez ceci pour déboguer
+    var alertHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                        ${message}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                           
+                        </button>
+                     </div>`;
+    $(placeholderSelector).html(alertHTML).fadeTo(2000, 500).slideUp(500, function () {
+        $(this).empty();
+    });
+}
+
+
 $(document).ready(function () {
     $('#profilForm').on('submit', function (e) {
         e.preventDefault();
@@ -18,15 +32,25 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.success) {
                     $('#userLogin').text(formData.login);
-
-                    showAlert('Modification réussie !', 'success', '#success-alert-placeholder');
-                } else {
+                    var alertHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Modification réussie !
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                           
+                        </button>
+                     </div>`;
+                    $('#success-alert-placeholder').html(alertHTML).fadeTo(2000, 500).slideUp(500, function () {
+                        $(this).empty();
+                    });
+                }
+                else {
                     alert('Erreur lors de la mise à jour du profil : ' + response.error);
+
                 }
             },
-            error: function (xhr, status, error) {
+            error: function (error) {
                 alert('Une erreur s\'est produite: ' + error);
             }
+
         });
     });
 });
@@ -35,21 +59,17 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#resetButton').on('click', function (e) {
 
-
-        showAlert('Modifications annulées.', 'danger', '#danger-alert-placeholder');
+        var alertHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Modification Annulée !
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                           
+                        </button>
+                     </div>`;
+        $('#danger-alert-placeholder').html(alertHTML).fadeTo(2000, 500).slideUp(500, function () {
+            $(this).empty();
+        });
 
 
     });
 });
 
-function showAlert(message, type, placeholderSelector) {
-    var alertHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
-                        ${message}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                           
-                        </button>
-                     </div>`;
-    $(placeholderSelector).html(alertHTML).fadeTo(2000, 500).slideUp(500, function () {
-        $(this).empty();
-    });
-}

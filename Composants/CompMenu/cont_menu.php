@@ -13,7 +13,8 @@
         }
 
         public function exec() {
-            $this->vue->menu();
+            $estAdmin = $this->modele->est_admin();
+            $this->vue->menu($estAdmin);
             $this->vue->affiche();
         }
     }

@@ -27,12 +27,11 @@ class ModifierProfil extends ConnexionAjax
         $sql->execute();
 
         // Vérification si la mise à jour a réussi
-        if ($sql->rowCount() >= 1) {
+        if ($sql->rowCount() > 0) {
             echo json_encode(['success' => true]);
 
         } else {
             echo json_encode(['error' => 'La mise à jour a échoué ou aucune donnée n’a été modifiée.']);
-
 
         }
     }
