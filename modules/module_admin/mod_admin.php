@@ -1,14 +1,16 @@
 <?php
 
-include_once("cont_ennemis.php");
+include_once("cont_admin.php");
 
-class ModEnnemi
+class ModAdmin
 {
     public function __construct()
     {
 
-        $controleur = new ContEnnemi();
+        $controleur = new ContAdmin();
+
         $controleur->exec();
+
     }
 }
 ?>

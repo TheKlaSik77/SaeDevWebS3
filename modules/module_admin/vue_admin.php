@@ -1,6 +1,5 @@
 <?php
-
-class VueClassement extends VueGenerique
+class VueAdmin extends VueGenerique
 {
 
     public function __construct()
@@ -8,53 +7,20 @@ class VueClassement extends VueGenerique
         parent::__construct();
     }
 
-    public function menu()
-    {
-        ?>
-        <div>
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php?module=classement&action=mondial">Classement
-                        Mondial</a>
-                </li>
-                <?php if (isset($_SESSION["nouvelsession"])) {
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php?module=classement&action=joueur">Mes
-                            statistiques</a>
-                    </li>
-                <?php } else {
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?module=classement&action=connexion">Mes
-                            statistiques</a>
-                    </li>
-                <?php } ?>
-            </ul>
-        </div>
-        <?php
-    }
-
-
-    public function afficherClassementGlobal($tableau)
+    public function afficherUtilisateur($tableau)
     {
         ?>
         <div class="table-responsive">
-            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="filtre par login...">
-            <table class="table table-dark table-striped table-hover" id="data-table">
+            <table class="table table-dark table-striped table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">N°</th>
+                        <th scope="col">idUser</th>
                         <th scope="col">Login</th>
-                        <th scope="col">Tourelles </th>
-                        <th scope="col">moyenne Dégâts</th>
-                        <th scope="col">Obstacles</th>
-                        <th scope="col">moyenne Dégâts</th>
-                        <th scope="col">Morts</th>
-                        <th scope="col">Survivants</th>
-                        <th scope="col">Max Pv perdus</th>
-                        <th scope="col">% de réussite</th>
-                        <th scope="col">Ennemi Frequent</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Pays</th>
+                        <th scope="col">Biographie</th>
+                        <th scope="col">Supprimer</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
@@ -65,65 +31,37 @@ class VueClassement extends VueGenerique
                                 <?php echo $index + 1; ?>
                             </th>
                             <td>
+                                <?php echo $data['idUser']; ?>
+                            </td>
+                            <td>
                                 <?php echo $data['login']; ?>
                             </td>
                             <td>
-                                <?php echo $data['nbTourelles']; ?>
+                                <?php echo $data['mail']; ?>
                             </td>
                             <td>
-                                <?php echo $data['moy_dgts_Tour']; ?>
-                            <td>
-                                <?php echo $data['nbOstacles']; ?>
+                                <?php echo $data['pays']; ?>
                             </td>
                             <td>
-                                <?php echo $data['moy_dgts_Obs']; ?>
+                                <?php echo $data['biographie']; ?>
                             </td>
                             <td>
-                                <?php echo $data['nbEnnemisMort']; ?>
+                                <form class="suppForm">
+
+                                    <button type="submit" id="supprimer" name=supprimer class="supprimerBtn"
+                                        value="<?php echo $data['idUser']; ?>">Supprimer</button>
+                                </form>
+
                             </td>
-                            <td>
-                                <?php echo $data['nbEnnemisPasses']; ?>
-                            </td>
-                            <td>
-                                <?php echo $data['max_perte']; ?>
-                            </td>
-                            <td>
-                                <?php echo $data['prcent_reussite']; ?>
-                            </td>
-                            <td>
-                                <?php echo $data['ennemiFrequent']; ?>
-                            </td>
-                            </td>
+
+
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
 
-        <script>
-            function filterTable() {
-                var input, filtre, tableau, tr, td, i, txtValue;
-                input = document.getElementById("searchInput");
-                filtre = input.value.toUpperCase();
-                tableau = document.getElementById("data-table");
-                tr = tableau.getElementsByTagName("tr");
-
-                for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[0]; // L'index 0 cherche dans la colonne 'Login'
-                    if (td) {
-                        txtValue = td.textContent || td.innerText;
-                        if (txtValue.toUpperCase().indexOf(filtre) > -1) {
-                            tr[i].style.display = "";
-                        } else {
-                            tr[i].style.display = "none";
-                        }
-                    }
-                }
-            }
-        </script>
-
         <?php
-
     }
 
     public function afficherStatistiquesJoueur($tableau)

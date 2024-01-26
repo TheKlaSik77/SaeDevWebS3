@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $('#profilForm').on('submit', function(e) {
+$(document).ready(function () {
+    $('#profilForm').on('submit', function (e) {
         e.preventDefault();
 
         var formData = {
@@ -10,21 +10,21 @@ $(document).ready(function() {
         };
 
         $.ajax({
-            url: '../SaeDevWebS3/modules/module_profil/modifier_profil.php', // Remplacez par le chemin correct
+            url: '../SaeDevWebS3/modules/module_profil/modifier_profil.php',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(formData),
             dataType: 'json',
-            success: function(response) {
+            success: function (response) {
                 if (response.success) {
                     $('#userLogin').text(formData.login);
 
-                    showAlert('Modification réussie !', 'success','#success-alert-placeholder' );
+                    showAlert('Modification réussie !', 'success', '#success-alert-placeholder');
                 } else {
                     alert('Erreur lors de la mise à jour du profil : ' + response.error);
                 }
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 alert('Une erreur s\'est produite: ' + error);
             }
         });
@@ -32,13 +32,13 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-    $('#resetButton').on('click', function(e) {
-        
-         
-            showAlert('Modifications annulées.', 'danger','#danger-alert-placeholder');
-       
-        
+$(document).ready(function () {
+    $('#resetButton').on('click', function (e) {
+
+
+        showAlert('Modifications annulées.', 'danger', '#danger-alert-placeholder');
+
+
     });
 });
 
@@ -49,7 +49,7 @@ function showAlert(message, type, placeholderSelector) {
                            
                         </button>
                      </div>`;
-    $(placeholderSelector).html(alertHTML).fadeTo(2000, 500).slideUp(500, function() {
+    $(placeholderSelector).html(alertHTML).fadeTo(2000, 500).slideUp(500, function () {
         $(this).empty();
     });
 }

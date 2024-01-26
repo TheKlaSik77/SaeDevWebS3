@@ -4,12 +4,12 @@
         public function __construct () {}
 
         public function est_admin(){
-            if (isset($_SESSION["id"])){
+            if (isset($_SESSION["admin"])){
                 include_once('connexion.php');
-                $requete = self::$bdd->prepare('SELECT admin FROM roles WHERE id_utilisateur =  ?');
+                $requete = self::$bdd->prepare('SELECT admin FROM Utilisateur WHERE idUser=  ?');
                 $requete->execute(array($_SESSION["id"]));
                 $t = $requete->fetch();
-                return $t[0];
+                var_dump($t[0]);
             } else {
                 return false;
             }

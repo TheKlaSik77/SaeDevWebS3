@@ -16,10 +16,29 @@ class ModeleCo extends Connexion
             !empty($_POST['mail'])
         ) {
             try {
+                // Vérifiez si le login est déjà utilisé
+                $checkReq = self::$bdd->prepare("SELECT * FROM Utilisateur WHERE login = :log");
+                $checkReq->bindValue(':log', $_POST['login']);
+                $checkReq->execute();
+
+                if ($checkReq->rowCount() > 0) {
+                    // Login déjà utilisé
+                    return -1;
+                }
+
+                // Vérifiez si l'e-mail est déjà utilisé
+                $checkEmail = self::$bdd->prepare("SELECT * FROM Utilisateur WHERE mail = :mail");
+                $checkEmail->bindValue(':mail', $_POST['mail']);
+                $checkEmail->execute();
+
+                if ($checkEmail->rowCount() > 0) {
+                    // E-mail déjà utilisé
+                    return -4;
+                }
 
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-                $req = self::$bdd->prepare("INSERT INTO Utilisateur (login, mdp, mail, pays) VALUES (:log, :mdp, :mail, :pays)");
+                $req = self::$bdd->prepare("INSERT INTO Utilisateur (login, mdp, mail, pays, admin) VALUES (:log, :mdp, :mail, :pays, '0')");
                 $req->bindValue(':log', $_POST['login']);
                 $req->bindValue(':mdp', $password);
                 $req->bindValue(':mail', $_POST['mail']);
@@ -27,18 +46,17 @@ class ModeleCo extends Connexion
                 $result = $req->execute();
 
                 if ($result === false) {
-                   return -2;
+                    return -2;
                 }
 
+                return 1;
             } catch (Exception $e) {
                 echo "resultat faux";
             }
-
         } else {
             return -3;
         }
     }
-
 
     public function get_utilisateur($login)
     {
@@ -46,9 +64,6 @@ class ModeleCo extends Connexion
             $req = self::$bdd->prepare("SELECT * from utilisateur WHERE login=?");
             $resultat = $req->execute([$login]);
 
-            if ($resultat == false) {
-                echo "FALSE";
-            }
             return $req->fetch();
         } catch (Exception $e) {
             echo "resultat faux";
@@ -56,23 +71,13 @@ class ModeleCo extends Connexion
     }
 
 
-
     public function verifLogin()
     {
         try {
             $req = self::$bdd->prepare("SELECT * from Utilisateur WHERE login=:log");
-            echo $_POST['login'];
-            $req->bindValue(':log',$_POST['login']);
+            $req->bindValue(':log', $_POST['login']);
             $resultat = $req->execute();
 
-            if ($resultat == false) {
-                echo "FALSE";
-            }
-            else{
-                echo "true";
-
-            }
-           
             return $resultat;
         } catch (Exception $e) {
             echo "resultat faux";
@@ -83,16 +88,12 @@ class ModeleCo extends Connexion
     {
         try {
             $req = self::$bdd->prepare("SELECT mdp from Utilisateur WHERE login=:log");
-            echo $_POST['login'];
-            $req->bindValue(':log',$_POST['login']);
+            $req->bindValue(':log', $_POST['login']);
             $resultat = $req->execute();
             $password = $req->fetchColumn();
-            if ($resultat == false) {
-                echo "FALSE";
-            }
-            else{
-                echo "OK";
-                return (password_verify($_POST['mdp'],$password));
+
+            if ($resultat == true) {
+                return (password_verify($_POST['mdp'], $password));
             }
 
         } catch (Exception $e) {
@@ -103,59 +104,50 @@ class ModeleCo extends Connexion
     public function connexion()
     {
         if (!isset($_SESSION["nouvelsession"])) {
-            echo "dedans";
-            echo "<br>";
-            var_dump($this->verifLogin());
-            echo "<br>";
-            var_dump($this->verifMdp());
-            echo "<br>";
 
-            if($this->verifLogin() && $this->verifMdp()){
+            if ($this->verifLogin() && $this->verifMdp()) {
                 $_SESSION["nouvelsession"] = 0;
 
                 try {
                     $req = self::$bdd->prepare("SELECT idUser from Utilisateur WHERE login=:log");
-                    echo $_POST['login'];
-                    $req->bindValue(':log',$_POST['login']);
-                    $resultat = $req->execute();
+                    $req->bindValue(':log', $_POST['login']);
+                    $req->execute();
                     $id = $req->fetchColumn();
-                    echo $id;
                     $_SESSION["id"] = $id;
-                    var_dump($_SESSION);
 
-                    if ($resultat == false) {
-                        echo "FALSE";
-                    }
-                    else{
-                        echo "OK";
-                    }
-        
                 } catch (Exception $e) {
                     echo "resultat faux";
                 }
 
-                // Connexion en tant qu'admin
-                /*$requete = self::$bdd->prepare('SELECT admin FROM roles JOIN Utilisateur ON(roles.id_utilisateur = utilisateurs.id) WHERE login =  ?');
-                $requete->execute(array($_POST['login']));
-                $t = $requete->fetch();
-                if ($t[0] == true) {
-                    return 2;
-                } else {
-                    return 1;
-                }*/
-                
+                try {
+                    $req = self::$bdd->prepare("SELECT admin from Utilisateur WHERE idUser=:id");
+                    $req->bindValue(':id', $_SESSION["id"]);
+                    $req->execute();
+                    $admin = $req->fetchColumn();
+
+                    if ($admin == 1) {
+
+                        $_SESSION["admin"] = $admin;
+                        return -3;
+                    }
+
+                } catch (Exception $e) {
+                    echo "resultat faux";
+                }
+
             } else {
-                die("mauvais mot de passe ou nom d'utilisateurs");
+                return -1;
             }
         } else {
-            return -1;
+            return -2;
         }
     }
+
 
     public function deconnexion()
     {
         unset($_SESSION["nouvelsession"]);
+        return 0;
     }
-
 }
 ?>

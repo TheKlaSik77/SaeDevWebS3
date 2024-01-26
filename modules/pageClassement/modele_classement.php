@@ -1,4 +1,6 @@
 <?php
+
+
 include_once('connexion.php');
 
 class ModeleClassement extends Connexion
@@ -44,7 +46,7 @@ class ModeleClassement extends Connexion
 
         try {
 
-            $query = "Select * from StatistiquesParPartie where idUser = $id order by idPartie;";
+            $query = "Select * from StatistiquesParPartie inner join Partie using (idPartie)  where idUser = $id order by idPartie";
             $resultatSelect = self::$bdd->query($query);
 
             if ($resultatSelect === false) {
@@ -58,8 +60,9 @@ class ModeleClassement extends Connexion
 
     }
 
-    public function StatistiquesLogin(){
-        
+    public function StatistiquesLogin()
+    {
+
     }
 }
 ?>

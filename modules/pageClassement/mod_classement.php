@@ -1,14 +1,16 @@
 <?php
 
-    include_once("cont_classement.php");
+include_once("cont_classement.php");
 
-    class ModClassement{
-        public function __construct(){
-            
-            $controleur = new ContClassement();
+class ModClassement
+{
+    public function __construct()
+    {
 
-            $controleur->exec();
+        $controleur = new ContClassement();
 
-        }
+        $controleur->exec();
+
     }
+}
 ?>

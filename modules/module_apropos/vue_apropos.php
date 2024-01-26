@@ -1,7 +1,3 @@
-<!-- Version 1.0 - 2022/12/05 -
-GNU GPL Copyleft 🄯 2022-2032 -
-Initiated by Ismael ARGENCE & Mathéo NGUYEN & Nathan FENOLLOSA -->
-
 <?php
 
 class VueApropos extends VueGenerique
@@ -15,7 +11,7 @@ class VueApropos extends VueGenerique
     public function afficher_apropos()
     {
 
-?>
+        ?>
         <!DOCTYPE html>
         <html lang="fr">
 
@@ -23,7 +19,6 @@ class VueApropos extends VueGenerique
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>À Propos - Site de Jeux Vidéo</title>
-            <!-- Bootstrap CSS -->
             <!-- Bootstrap CSS -->
             <style>
                 body {
@@ -84,8 +79,9 @@ class VueApropos extends VueGenerique
                 .about-section .container p {
                     padding: 30px;
                 }
+
                 .game-elements-section .container {
-                    background-color:#f4f4f4;
+                    background-color: #f4f4f4;
                 }
 
                 .play-button {
@@ -95,7 +91,6 @@ class VueApropos extends VueGenerique
                 .card {
                     margin: 20px;
                 }
-             
             </style>
         </head>
 
@@ -122,7 +117,7 @@ class VueApropos extends VueGenerique
 
             <div class="game-elements-section">
                 <hr>
-                <div class="container"> 
+                <div class="container">
                     <h2>Explorez les Éléments du Jeu</h2>
                     <div class="row">
                         <div class="col-md-4 d-flex">
@@ -134,12 +129,12 @@ class VueApropos extends VueGenerique
                                     <a href="index.php?module=ennemis&action=ennemis" class="btn btn-primary">Explorer</a>
                                     <hr>
                                 </div>
-                    
+
                             </div>
                         </div>
                         <div class="col-md-4 d-flex">
                             <div class="card h-100 w-100">
-                    
+
                                 <img src="images/apropos_tours.png" class="card-img-top" alt="Tours">
                                 <div class="card-body">
                                     <h5 class="card-title">Tours</h5>
@@ -171,7 +166,7 @@ class VueApropos extends VueGenerique
         </body>
 
         </html>
-<?php
+        <?php
     }
 }
 ?>

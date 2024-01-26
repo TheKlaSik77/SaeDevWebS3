@@ -7,63 +7,33 @@ class VueCo extends VueGenerique
         parent::__construct();
     }
 
-     //return -3
-     public function EchecInscription3(){
-        ?> <div class="alert alert-info" role="alert">
-            Tous les champs sont requis !
+    public function Admin()
+    {
+        ?>
+        <div class="alert alert-success" role="alert">
+            Vous êtes bien connectés en tant qu'administrateur !
         </div>
-        <?php      
+        <?php
     }
 
-    //return -2
-    public function EchecInscription2(){
-        ?> <div class="alert alert-info" role="alert">
-            Echec lors de l'inscription : les informations fournies n'ont pas pu être intégrées ! 
+    public function EchecConnexion()
+    {
+        ?>
+        <div class="alert alert-warning" role="alert">
+            Echec de la connexion : Login ou mot de passe incorrect !
         </div>
-        <?php      
+        <?php
     }
 
-    //return -1
-    public function EchecInscription1(){
-        ?> <div class="alert alert-info" role="alert">
-            Echec lors de l'inscription : ce pseudo est déjà utilisé ! 
+    public function UtilisateurDejaConnecte()
+    {
+        ?>
+        <div class="alert alert-info" role="alert">
+            Un utilisateur est déjà connecté : veuillez vous déconnecter !
         </div>
-        <?php      
+        <?php
     }
-    public function confirm_inscription($login) {
-        ?>
-            Inscription de <?=$login?> réussie !
-        <?php
-            }
-            public function erreur_inscription($login) {
-        ?>
-            Echec de l'inscription de <?=$login?>
-        <?php
-            }
-        
-            public function confirm_connexion ($login) {
-        ?>
-            Connexion en tant que <?=$login?> réussie !
-        <?php
-            }
-        
-            public function echec_connexion ($login) {
-        ?>
-            Echec de la connexion en tant que <?=$login?>
-        <?php
-            }
-        
-            public function utilisateur_inconnu ($login) {
-        ?>
-            Utilisateur <?=$login?> inconnu
-        <?php
-            }
-        
-            public function confirm_deconnexion() {
-                ?>
-                Vous êtes bien déconnecté(e)
-                <?php
-            }
+
     public function form_connexion()
     {
         ?>
@@ -75,7 +45,6 @@ class VueCo extends VueGenerique
                     <!-- header -->
 
                     <h4 class="mb-0 ">Connexion</h4>
-
 
                     <!-- body -->
                     <div class="card-body px-5">
@@ -90,8 +59,7 @@ class VueCo extends VueGenerique
                             </div>
                             <div class="login-field">
                                 <label for="password">Mot De Passe</label>
-                                <input type="password" class="form-control" id="mdp" name='mdp'
-                                    placeholder="Mot de passe" />
+                                <input type="password" class="form-control" id="mdp" name='mdp' placeholder="Mot de passe" />
                             </div>
                             <div class="btn-class">
                                 <button id="btn" type="submit" class="btn btn-primary">
@@ -101,13 +69,76 @@ class VueCo extends VueGenerique
                         </div>
 
                         <!-- footer -->
-                        
+
                 </form>
             </div>
         </div>
         <?php
     }
 
+    public function DeconnexionReussie()
+    {
+        ?>
+        <div class="alert alert-success" role="alert">
+            Déconnexion réussie !
+        </div>
+        <?php
+    }
+
+    public function EchecInscriptionChampsRequis()
+    {
+        ?>
+        <div class="alert alert-warning" role="alert">
+            Vous devez renseignez un login, un mot de passe et une adresse mail !
+        </div>
+        <?php
+    }
+
+    //return -2
+    public function EchecInscriptionErreurInscription()
+    {
+        ?>
+        <div class="alert alert-warning" role="alert">
+            Echec lors de l'inscription : les informations fournies n'ont pas pu être intégrées !
+        </div>
+        <?php
+    }
+
+    //return -1
+    public function EchecInscriptionLoginExistant()
+    {
+        ?>
+        <div class="alert alert-warning" role="alert">
+            Echec lors de l'inscription : ce pseudo est déjà utilisé !
+        </div>
+        <?php
+    }
+
+    public function EchecInscriptionMailExistant()
+    {
+        ?>
+        <div class="alert alert-warning" role="alert">
+            Echec lors de l'inscription : ce mail est déjà utilisé !
+        </div>
+        <?php
+    }
+
+    public function InscriptionReussie()
+    {
+        ?>
+        <div class="alert alert-success" role="alert">
+            Inscription Réussie !
+        </div>
+    <?php
+    }
+    public function ConnexionReussie()
+    {
+        ?>
+        <div class="alert alert-success" role="alert">
+            Connexion Réussie !
+        </div>
+    <?php
+    }
 
     public function form_inscription()
     {
@@ -141,8 +172,7 @@ class VueCo extends VueGenerique
                             </div>
                             <div class="login-field">
                                 <label for="login">Pays</label>
-                                <input type="text" class="form-control" id="pays" name='pays'
-                                    placeholder="pays" />
+                                <input type="text" class="form-control" id="pays" name='pays' placeholder="pays" />
                             </div>
                             <div class="btn-class">
                                 <button id="btn" type="submit" class="btn btn-primary">
@@ -158,8 +188,9 @@ class VueCo extends VueGenerique
 
         <?php
 
-        
+
     }
 
 }
+
 ?>

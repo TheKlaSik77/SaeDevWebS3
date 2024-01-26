@@ -34,61 +34,53 @@ class VueTour extends VueGenerique
 
       .card {
         margin-top: 30px;
-        /* Augmenter la marge supérieure */
         margin-bottom: 30px;
-        /* Ajouter une marge inférieure pour l'espace entre les cartes */
         padding-bottom: 15px;
         width: 30vw;
-        
-        /* Vous pouvez ajuster cette valeur pour contrôler la largeur des cartes */
+
+
       }
 
       .img {
         height: 380px;
-        /* Définir une hauteur fixe pour les images */
         width: auto;
-        /* Assurer que la largeur est automatiquement ajustée */
         object-fit: cover;
-        /* Assurer que l'image couvre la zone définie sans être déformée */
+
       }
 
       .row {
         margin-left: 30px;
-        /* Augmenter la marge gauche de la rangée */
         margin-right: 30px;
-        /* Augmenter la marge droite de la rangée */
-       
+
+
       }
 
 
       .game-elements-section {
         padding: 50px;
-      
+
 
       }
 
-      .game-elements-section .container {
-        
-      }
+      .game-elements-section .container {}
 
-      .row table{
+      .row table {
         background-color: #D3D3D3;
       }
-
-  
     </style>
 
     <section id="presentation">
       <div class="about-section">
         <div class="container">
           <h2>À Propos des Tours</h2>
-        
+
         </div>
         <div class="container">
-        <p>Protéger les citoyens des villes sous-terraines contre les attaques incessantes des Splicers avec les tours défensives pour repousser les assauts des Splicers, 
-          qui de plus en plus difficiles à vaincre...
+          <p>Protéger les citoyens des villes sous-terraines contre les attaques incessantes des Splicers avec les tours
+            défensives pour repousser les assauts des Splicers,
+            qui de plus en plus difficiles à vaincre...
           </p>
-      </div>
+        </div>
     </section>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -112,40 +104,40 @@ class VueTour extends VueGenerique
                     <?= htmlspecialchars($tour['description']) ?>
                   </p>
                 </div>
-                  <div class="row">
-                    <div class="col">
-                      <table class="table table-responsive-md table-bordered table-hover">
-                        <thead>
-                          <tr>
+                <div class="row">
+                  <div class="col">
+                    <table class="table table-responsive-md table-bordered table-hover">
+                      <thead>
+                        <tr>
 
-                            <th scope="col">Coût</th>
-                            <th scope="col">Portée</th>
-                            <th scope="col">Projectiles</th>
-                            <th scope="col">Dégâts</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
+                          <th scope="col">Coût</th>
+                          <th scope="col">Portée</th>
+                          <th scope="col">Projectiles</th>
+                          <th scope="col">Dégâts</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
 
-                            <td>
-                              <?= htmlspecialchars($tour['cout']) ?>
-                            </td>
-                            <td>
-                              <?= htmlspecialchars($tour['portee']) ?>
-                            </td>
-                            <td>
-                              <?= htmlspecialchars($tour['projectiles']) ?>
-                            </td>
-                            <td>
-                              <?= htmlspecialchars($tour['degats']) ?>
-                            </td>
-                          </tr>
+                          <td>
+                            <?= htmlspecialchars($tour['cout']) ?>
+                          </td>
+                          <td>
+                            <?= htmlspecialchars($tour['portee']) ?>
+                          </td>
+                          <td>
+                            <?= htmlspecialchars($tour['projectiles']) ?>
+                          </td>
+                          <td>
+                            <?= htmlspecialchars($tour['degats']) ?>
+                          </td>
+                        </tr>
 
-                        </tbody>
-                      </table>
-                    </div>
+                      </tbody>
+                    </table>
                   </div>
-                
+                </div>
+
               </div>
             </div>
           <?php endforeach; ?>

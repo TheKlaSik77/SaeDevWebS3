@@ -1,21 +1,20 @@
-
 <?php
 
 
 
-    session_start();
-    
-    include_once "connexion.php";
-    include_once "controleur.php";
-    
+session_start();
 
-    $affichage;
-    Connexion::initConnexion();
+include_once "connexion.php";
+include_once "controleur.php";
 
-    $controleur = new Controleur();
-    $controleur -> exec();
-    
-    include_once "template.php";
 
-    
+$affichage;
+Connexion::initConnexion();
+
+$controleur = new Controleur();
+$controleur->exec();
+
+include_once "template.php";
+
+
 ?>
